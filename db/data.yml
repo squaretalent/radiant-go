@@ -1,0 +1,154 @@
+
+--- 
+config: 
+  columns: 
+  - id
+  - key
+  - value
+  - description
+  records: 
+  - - "1"
+    - admin.title
+    - Radiant CMS
+    - Title text displayed at the top of all administration screens.
+  - - "2"
+    - admin.subtitle
+    - Publishing for Small Teams
+    - The tagline displayed underneath the main administration title
+  - - "3"
+    - defaults.page.parts
+    - body, extended
+    - |
+      Defines the page parts that a new page is created with.  It should be a list, separated by a comma and a space.  For example:
+      
+      bq. @body, extended, sidebar@
+
+  - - "4"
+    - defaults.page.status
+    - draft
+    - |
+      Defines the publishing status of new pages.  This can any one of:
+      
+      * draft
+      * published
+      * reviewed
+      * hidden
+
+  - - "5"
+    - defaults.page.filter
+    - ""
+    - |
+      Sets the text filter a new page has by default.  Valid options, in a vanilla Radiant install are:
+      
+      * _leave blank to set no default filter_
+      * Markdown
+      * SmartyPants
+      * Textile
+
+  - - "6"
+    - session_timeout
+    - "1209600"
+    - 
+  - - "7"
+    - default_locale
+    - en
+    - 
+  - - "8"
+    - roles.settings
+    - admin
+    - |
+      List of user roles that may see the settings tabs.                
+
+  - - "9"
+    - assets.additional_thumbnails
+    - normal=640x640>
+    - Defines the default sizes for image assets that are created when an image is uploaded. Use "#" to crop the image to a specific size. "42x42#" would be a square thumbnail, cropped in the center 42 pixels by 42 pixels.
+  - - "10"
+    - assets.display_size
+    - original
+    - "Sets which of your image sizes is shown is the edit view. Defaults to the \"original\" image size, but any size may be used. "
+  - - "11"
+    - assets.storage
+    - filesystem
+    - 
+  - - "12"
+    - assets.s3.bucket
+    - s3.domain.tld
+    - 
+  - - "13"
+    - assets.s3.key
+    - "123456"
+    - 
+  - - "14"
+    - assets.s3.secret
+    - 123456789ABCDEF
+    - 
+  - - "15"
+    - assets.s3.path
+    - ":class/:basename_:style.:extension"
+    - 
+  - - "16"
+    - assets.content_types
+    - image/jpeg, image/pjpeg, image/gif, image/png, image/x-png, image/jpg, video/x-m4v, video/quicktime, application/x-shockwave-flash, audio/mpeg, video/mpeg
+    - Defines the content types of that will be allowed to be uploaded as assets.
+  - - "17"
+    - assets.max_asset_size
+    - "5"
+    - The size in megabytes that will be the max size allowed to be uploaded for an asset
+  - - "18"
+    - assets.skip_filetype_validation
+    - "true"
+    - 
+  - - "19"
+    - mail.pass
+    - mailpass
+    - 
+  - - "20"
+    - mail.port
+    - "587"
+    - 
+  - - "21"
+    - mail.smtp
+    - smtp.gmail.com
+    - 
+  - - "22"
+    - mail.user
+    - mailer@gmail.com
+    - 
+
+--- 
+users: 
+  columns: 
+  - id
+  - name
+  - email
+  - login
+  - password
+  - created_at
+  - updated_at
+  - created_by_id
+  - updated_by_id
+  - admin
+  - designer
+  - notes
+  - lock_version
+  - salt
+  - session_token
+  - locale
+  records: 
+  - - "1"
+    - Administrator
+    - 
+    - admin
+    - 40bd315233e388fda27865bc7de6d8e6b473d575
+    - 2010-03-29 06:22:46
+    - 2010-03-29 06:22:46
+    - 
+    - 
+    - true
+    - false
+    - 
+    - "0"
+    - 3cfa9a5fea6914d32995eddb19d9c0a8e3c17349
+    - 
+    - 

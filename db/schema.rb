@@ -11,9 +11,25 @@
 
 ActiveRecord::Schema.define(:version => 20091003095744) do
 
+  create_table "assets", :force => true do |t|
+    t.string   "caption"
+    t.string   "title"
+    t.string   "asset_file_name"
+    t.string   "asset_content_type"
+    t.integer  "asset_file_size"
+    t.integer  "created_by_id"
+    t.integer  "updated_by_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "original_width"
+    t.integer  "original_height"
+    t.string   "original_extension"
+  end
+
   create_table "config", :force => true do |t|
-    t.string "key",   :limit => 40, :default => "", :null => false
-    t.string "value",               :default => ""
+    t.string "key",         :limit => 40, :default => "", :null => false
+    t.string "value",                     :default => ""
+    t.text   "description"
   end
 
   add_index "config", ["key"], :name => "key", :unique => true
@@ -22,6 +38,19 @@ ActiveRecord::Schema.define(:version => 20091003095744) do
     t.string  "name"
     t.integer "schema_version", :default => 0
     t.boolean "enabled",        :default => true
+  end
+
+  create_table "forms", :force => true do |t|
+    t.string   "title"
+    t.string   "action"
+    t.string   "redirect_to"
+    t.text     "body"
+    t.text     "content"
+    t.text     "config"
+    t.integer  "created_by"
+    t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "layouts", :force => true do |t|
@@ -33,6 +62,12 @@ ActiveRecord::Schema.define(:version => 20091003095744) do
     t.integer  "updated_by_id"
     t.string   "content_type",  :limit => 40
     t.integer  "lock_version",                 :default => 0
+  end
+
+  create_table "page_attachments", :force => true do |t|
+    t.integer "asset_id"
+    t.integer "page_id"
+    t.integer "position"
   end
 
   create_table "page_parts", :force => true do |t|
@@ -61,6 +96,7 @@ ActiveRecord::Schema.define(:version => 20091003095744) do
     t.integer  "lock_version",                 :default => 0
     t.string   "description"
     t.string   "keywords"
+    t.integer  "position"
   end
 
   add_index "pages", ["class_name"], :name => "pages_class_name"

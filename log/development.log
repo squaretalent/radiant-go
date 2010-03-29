@@ -10275,3 +10275,412 @@ Cache read: Radiant::Config
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT DISTINCT class_name FROM pages WHERE class_name <> '' AND class_name IS NOT NULL[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+  [4;35;1mRadiant::Config Load (1.0ms)[0m   [0mSELECT * FROM "config" [0m
+Cache write: Radiant::Config
+Cache write: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT DISTINCT class_name FROM pages WHERE class_name <> '' AND class_name IS NOT NULL[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("assets")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("config")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('key')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("extension_meta")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("forms")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("layouts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("page_attachments")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("page_parts")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('parts_by_page')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('pages_published')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('pages_child_slug')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('pages_parent_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('pages_class_name')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("snippets")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('name')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('login')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("assets")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("config")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('key')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("extension_meta")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("forms")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("layouts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("page_attachments")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("page_parts")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('parts_by_page')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('pages_published')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('pages_child_slug')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('pages_parent_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('pages_class_name')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("snippets")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('name')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('login')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+  [4;35;1mRadiant::Config Load (1.6ms)[0m   [0mSELECT * FROM "config" [0m
+Cache write: Radiant::Config
+Cache write: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Cache read: Radiant.cache_mtime
+Cache read: Radiant::Config
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT DISTINCT class_name FROM pages WHERE class_name <> '' AND class_name IS NOT NULL[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("assets")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("config")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('key')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("extension_meta")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("forms")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("layouts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("page_attachments")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("page_parts")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('parts_by_page')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('pages_published')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('pages_child_slug')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('pages_parent_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('pages_class_name')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("snippets")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('name')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('login')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("assets")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("config")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('key')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("extension_meta")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("forms")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("layouts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("page_attachments")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("page_parts")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('parts_by_page')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('pages_published')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('pages_child_slug')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('pages_parent_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('pages_class_name')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("snippets")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('name')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('login')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT COUNT(*) FROM "config"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT COUNT(*) FROM "config"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT * FROM "config" ORDER BY id LIMIT 1000 OFFSET 0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT COUNT(*) FROM "page_parts"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT COUNT(*) FROM "extension_meta"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT COUNT(*) FROM "sessions"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT COUNT(*) FROM "pages"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT COUNT(*) FROM "snippets"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT COUNT(*) FROM "layouts"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT COUNT(*) FROM "users"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT COUNT(*) FROM "users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT * FROM "users" ORDER BY id LIMIT 1000 OFFSET 0[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT COUNT(*) FROM "page_attachments"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT COUNT(*) FROM "assets"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT COUNT(*) FROM "forms"[0m

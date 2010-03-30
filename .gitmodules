@@ -1,0 +1,24 @@
+[submodule "vendor/extensions/drag"]
+	path = vendor/extensions/drag
+	url = git://github.com/squaretalent/radiant-drag-extension.git
+[submodule "vendor/extensions/forms"]
+	path = vendor/extensions/forms
+	url = git://github.com/squaretalent/radiant-forms-extension.git
+[submodule "vendor/extensions/forms_mail"]
+	path = vendor/extensions/forms_mail
+	url = git://github.com/squaretalent/radiant-forms_mail-extension.git
+[submodule "vendor/extensions/layouts"]
+	path = vendor/extensions/layouts
+	url = git://github.com/squaretalent/radiant-layouts-extension.git
+[submodule "vendor/extensions/navigation"]
+	path = vendor/extensions/navigation
+	url = git://github.com/squaretalent/radiant-navigation-extension.git
+[submodule "vendor/extensions/paperclipped"]
+	path = vendor/extensions/paperclipped
+	url = git://github.com/squaretalent/radiant-paperclipped-extension.git
+[submodule "vendor/extensions/redirect"]
+	path = vendor/extensions/redirect
+	url = git://github.com/squaretalent/radiant-redirect-extension.git
+[submodule "vendor/extensions/settings"]
+	path = vendor/extensions/settings
+	url = git://github.com/squaretalent/radiant-settings-extension.git

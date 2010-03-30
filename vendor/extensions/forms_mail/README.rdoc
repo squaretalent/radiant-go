@@ -1,0 +1,48 @@
+= Forms Mail Extension for Radiant
+
+This extension requires 
+  http://github.com/squaretalent/radiant-forms-extension
+
+== Installation
+  git clone git://github.com/squaretalent/radiant-forms_mail-extension vendor/extensions/forms_mail
+
+  Enable Action Mailer by removing line in environment.rb
+    config.frameworks -= [ :action_mailer ]
+
+== Form Config
+
+  mail:
+    subject: Hey new email!
+    recipients:
+      - joe.bloggs@email.com
+    from: person@email.com
+    sender:
+    # Optional, read data from a field instead
+    subject_field: title                              #<input type="text" name="title" />
+    from_field: name
+    reply_to_field: name
+    sender_field: name
+
+== History
+
+Created by: M@ McCray - mattmccray.com
+  Version: 0.2.1
+  Contact: mmccray@elucidata.net
+
+Ported to 'mental' by: Sean Cribbs - seancribbs.com
+  Version: 0.1
+  Contact: seancribbs@gmail.com
+  
+Seriously restructured by: Nathaniel Talbott - terralien.com
+  Version: 0.2
+  Contact: nathaniel@terralien.com
+  Work sponsored by: Ignite Social Media, http://ignitesocialmedia.com/
+
+Seriously restructured again by: Dirk Kelly - squaretalent.com
+  Version: 0.3
+  Contact: dirk.kelly@squaretalent.com
+
+== Todo
+
+* Tests
+* Tidy up configuration of smtp

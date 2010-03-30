@@ -17,7 +17,7 @@ config:
     - The tagline displayed underneath the main administration title
   - - "3"
     - defaults.page.parts
-    - body, extended
+    - body
     - |
       Defines the page parts that a new page is created with.  It should be a list, separated by a comma and a space.  For example:
       
@@ -25,7 +25,7 @@ config:
 
   - - "4"
     - defaults.page.status
-    - draft
+    - published
     - |
       Defines the publishing status of new pages.  This can any one of:
       
@@ -117,6 +117,65 @@ config:
     - 
 
 --- 
+page_parts: 
+  columns: 
+  - id
+  - name
+  - filter_id
+  - content
+  - page_id
+  records: 
+  - - "1"
+    - body
+    - Textile
+    - |-
+      h2. Textile Filtered Home Page
+      
+      !<r:assets:url title='radiant' />!
+    - "1"
+
+--- 
+pages: 
+  columns: 
+  - id
+  - title
+  - slug
+  - breadcrumb
+  - class_name
+  - status_id
+  - parent_id
+  - layout_id
+  - created_at
+  - updated_at
+  - published_at
+  - created_by_id
+  - updated_by_id
+  - virtual
+  - lock_version
+  - description
+  - keywords
+  - position
+  records: 
+  - - "1"
+    - Home
+    - /
+    - Home
+    - ""
+    - "100"
+    - 
+    - 
+    - 2010-03-29 06:57:23
+    - 2010-03-30 01:28:14
+    - 2010-03-29 00:00:00
+    - "1"
+    - "1"
+    - false
+    - "1"
+    - ""
+    - ""
+    - 
+
+--- 
 users: 
   columns: 
   - id
@@ -138,17 +197,93 @@ users:
   records: 
   - - "1"
     - Administrator
-    - 
+    - admin@radiantgo.com
     - admin
     - 40bd315233e388fda27865bc7de6d8e6b473d575
     - 2010-03-29 06:22:46
-    - 2010-03-29 06:22:46
+    - 2010-03-30 02:13:13
     - 
-    - 
+    - "1"
     - true
     - false
-    - 
-    - "0"
+    - ""
+    - "1"
     - 3cfa9a5fea6914d32995eddb19d9c0a8e3c17349
     - 
+    - ""
+  - - "2"
+    - Designer
+    - designer@radiantgo.com
+    - designer
+    - bc093eb33b5cdcf20bb569421ee13be3050fa57e
+    - 2010-03-30 02:13:02
+    - 2010-03-30 02:13:44
+    - "1"
+    - "2"
+    - false
+    - true
+    - ""
+    - "1"
+    - 010bbdafa254e69db5d76580c507aa898132b507
     - 
+    - ""
+  - - "3"
+    - Client
+    - client@radiantgo.com
+    - client
+    - 0900c57bb1643996741dacc332cdc95282cf1001
+    - 2010-03-30 02:13:29
+    - 2010-03-30 02:42:09
+    - "1"
+    - "3"
+    - false
+    - false
+    - ""
+    - "1"
+    - 5d0284ce906cd861b4180d5c1bf7701aa1a8ccdc
+    - 
+    - ""
+
+--- 
+page_attachments: 
+  columns: 
+  - id
+  - asset_id
+  - page_id
+  - position
+  records: 
+  - - "1"
+    - "1"
+    - "1"
+    - "1"
+
+--- 
+assets: 
+  columns: 
+  - id
+  - caption
+  - title
+  - asset_file_name
+  - asset_content_type
+  - asset_file_size
+  - created_by_id
+  - updated_by_id
+  - created_at
+  - updated_at
+  - original_width
+  - original_height
+  - original_extension
+  records: 
+  - - "1"
+    - ""
+    - radiant
+    - radiant.gif
+    - image/gif
+    - "8090"
+    - "1"
+    - "1"
+    - 2010-03-30 02:42:51
+    - 2010-03-30 02:42:52
+    - "382"
+    - "81"
+    - gif

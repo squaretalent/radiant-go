@@ -1,5 +1,4 @@
 config/database.yml
 *.sqlite3.db
-!db/development.sqlite3.db
 *.log
 tmp

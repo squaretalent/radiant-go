@@ -1,5 +1,36 @@
 
 --- 
+assets: 
+  columns: 
+  - id
+  - caption
+  - title
+  - asset_file_name
+  - asset_content_type
+  - asset_file_size
+  - created_by_id
+  - updated_by_id
+  - created_at
+  - updated_at
+  - original_width
+  - original_height
+  - original_extension
+  records: 
+  - - "1"
+    - ""
+    - radiant
+    - radiant.gif
+    - image/gif
+    - "8090"
+    - "1"
+    - "1"
+    - 2010-03-30 02:42:51
+    - 2010-03-30 02:42:52
+    - "382"
+    - "81"
+    - gif
+
+--- 
 config: 
   columns: 
   - id
@@ -115,6 +146,19 @@ config:
     - mail.user
     - mailer@gmail.com
     - 
+
+--- 
+page_attachments: 
+  columns: 
+  - id
+  - asset_id
+  - page_id
+  - position
+  records: 
+  - - "1"
+    - "1"
+    - "1"
+    - "1"
 
 --- 
 page_parts: 
@@ -243,47 +287,3 @@ users:
     - 5d0284ce906cd861b4180d5c1bf7701aa1a8ccdc
     - 
     - ""
-
---- 
-page_attachments: 
-  columns: 
-  - id
-  - asset_id
-  - page_id
-  - position
-  records: 
-  - - "1"
-    - "1"
-    - "1"
-    - "1"
-
---- 
-assets: 
-  columns: 
-  - id
-  - caption
-  - title
-  - asset_file_name
-  - asset_content_type
-  - asset_file_size
-  - created_by_id
-  - updated_by_id
-  - created_at
-  - updated_at
-  - original_width
-  - original_height
-  - original_extension
-  records: 
-  - - "1"
-    - ""
-    - radiant
-    - radiant.gif
-    - image/gif
-    - "8090"
-    - "1"
-    - "1"
-    - 2010-03-30 02:42:51
-    - 2010-03-30 02:42:52
-    - "382"
-    - "81"
-    - gif

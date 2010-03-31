@@ -1,0 +1,17 @@
+= Import Export
+
+Uses yaml_db (install the gem) to export the database to a yaml file.
+This includes the schema_migrations, so that extension migrations continue to work
+
+Updated to use db/data.yml, following what yaml_db does
+
+To import use: 
+
+ $ rake db:import
+
+To export, browse to /admin/export or use:
+
+ $ rake db:export
+ 
+by Sean Cribbs
+   April 18, 2007

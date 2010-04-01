@@ -65,16 +65,16 @@ assets:
   - - "1"
     - ""
     - radiant
-    - radiant.gif
-    - image/gif
-    - "8090"
+    - radiant.png
+    - image/png
+    - "22109"
     - "1"
     - "1"
     - 2010-03-30 02:42:51
-    - 2010-03-30 02:42:52
-    - "382"
-    - "81"
-    - gif
+    - 2010-04-01 04:57:05
+    - "0"
+    - "0"
+    - png
 
 --- 
 config: 
@@ -113,7 +113,7 @@ config:
 
   - - "5"
     - defaults.page.filter
-    - ""
+    - Textile
     - |
       Sets the text filter a new page has by default.  Valid options, in a vanilla Radiant install are:
       
@@ -192,6 +192,218 @@ config:
     - mail.user
     - mailer@gmail.com
     - 
+  - - "23"
+    - site.url
+    - http://www.egsample.com
+    - 
+  - - "24"
+    - site.title
+    - Radiant Go - Ready to Go
+    - 
+  - - "25"
+    - site.analytics
+    - setme
+    - 
+
+--- 
+forms: 
+  columns: 
+  - id
+  - title
+  - action
+  - redirect_to
+  - body
+  - content
+  - config
+  - created_by
+  - updated_by
+  - created_at
+  - updated_at
+  records: 
+  - - "1"
+    - contact
+    - ""
+    - /contact/thanks
+    - |-
+      <ul id='contact_fields'>
+      
+        <li id='contact_name'>
+          <r:label for='name'>your name</r:label>
+          <r:text name='name' />
+        </li>
+      
+        <li id='contact_email'>
+          <r:label for='email'>your email</r:label>
+          <r:text name='email' />
+        </li>
+      
+        <li id='contact_phone'>
+          <r:label for='phone'>your phone</r:label>
+          <r:text name='phone' />
+        </li>
+      
+        <li id='contact_submit'>
+          <r:submit value='send away' />
+        </li>
+      
+      </ul>
+    - |-
+      <h1>New Contact</h1>
+      
+      <ul>
+      
+        <li>Name <strong><r:get name='name' /></strong></li>
+        <li>Email <strong><r:get name='email' /></strong></li>
+        <li>Phone <strong><r:get name='phone' /></strong></li>
+      
+      </ul>
+    - |-
+      mail:
+        subject: www.squaretalent.com registration
+        recipients:
+          - dirk.kelly@squaretalent.com
+        from: mailer@squaretalent.com
+    - 
+    - 
+    - 2010-03-31 16:00:45
+    - 2010-04-01 16:03:18
+  - - "2"
+    - newsletter
+    - http://squaretalent.createsend.com/t/r/s/hdhiuh/
+    - ""
+    - |-
+      <ul id='newsletter_fields'>
+      
+        <h3>Signup to our newsletter</h3>
+      
+        <li id='newsletter_email'>
+          <input type='text' name='cm-hdhiuh-hdhiuh' />
+        </li>
+      
+        <li id='newsletter_submit'>
+          <r:submit value='Subscribe' />
+        </li>
+      
+      </ul>
+    - ""
+    - ""
+    - 
+    - 
+    - 2010-03-31 16:10:48
+    - 2010-04-01 16:12:24
+
+--- 
+layouts: 
+  columns: 
+  - id
+  - name
+  - content
+  - created_at
+  - updated_at
+  - created_by_id
+  - updated_by_id
+  - content_type
+  - lock_version
+  records: 
+  - - "1"
+    - .xml
+    - |-
+      <?xml version='1.0' encoding='UTF-8'?>
+      <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+        <r:content />
+      </urlset>
+    - 2010-03-31 14:49:33
+    - 2010-03-31 16:08:50
+    - "1"
+    - "1"
+    - text/xml
+    - "6"
+  - - "2"
+    - Application
+    - |-
+      <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'> 
+      <html> 
+        <head> 
+          <r:snippet name='meta' />
+          <r:snippet name='stylesheets' />
+        </head> 
+        <body class='<r:layout />'> 
+          <div id='root'>
+            <div id='head_container'>
+              <div id='head'>
+                <r:snippet name='head' />
+              </div>
+            </div>
+            <div id='content_container'> 
+              <r:content_for_layout />
+            </div> 
+            <div id='root_foot'> 
+            </div>
+          </div> 
+          <div id='foot_container'> 
+            <div id='foot'>
+              <r:snippet name='foot' />
+            </div>
+          </div> 
+          <r:snippet name='javascripts' /> 
+        </body> 
+      </html>
+    - 2010-03-31 15:37:50
+    - 2010-04-01 07:04:34
+    - "1"
+    - "1"
+    - ""
+    - "2"
+  - - "3"
+    - Home
+    - |-
+      <r:inside_layout name='Application'>
+        <div id='content'> 
+          <div id='content_main'> 
+            <r:content part='body.' />
+          </div> 
+          <div id='content_sub'> 
+            <r:content part='sub.' />
+            <r:form name='newsletter' />
+          </div> 
+          <div id='content_alt'> 
+            <r:content part='alt.' />
+          </div>
+        </div>
+      </r:inside_layout>
+    - 2010-03-31 15:43:34
+    - 2010-03-31 16:16:25
+    - "1"
+    - "1"
+    - ""
+    - "1"
+  - - "4"
+    - Page
+    - |-
+      <r:inside_layout name='Application'>
+        <div id='content'> 
+          <div id='content_main'> 
+            <r:content part='body' /> &nbsp;
+          </div> 
+          <r:if_content part='sub' inherit='true'>
+            <div id='content_sub'> 
+              <r:content part='sub' inherit='true' />
+              <r:form name='newsletter' />
+            </div> 
+          </r:if_content>
+          <r:if_content part='alt'>
+            <div id='content_alt'> 
+              <r:content part='alt' />
+            </div>
+          </r:if_content>
+        </div>
+      </r:inside_layout>
+    - 2010-03-31 16:08:42
+    - 2010-03-31 16:16:14
+    - "1"
+    - "1"
+    - ""
+    - "3"
 
 --- 
 page_attachments: 
@@ -215,14 +427,70 @@ page_parts:
   - content
   - page_id
   records: 
-  - - "1"
+  - - "2"
     - body
     - Textile
     - |-
-      h2. Textile Filtered Home Page
+      h2. Woops
       
-      !<r:assets:url title='radiant' />!
+      We couldn't find what you were looking for, we even looked under the bed! It's not there, we promise.
+      
+      "Go Home":/
+    - "2"
+  - - "3"
+    - body
+    - ""
+    - |-
+      <r:find url='/'>
+        <url>
+          <loc><r:config:setting key='site.url' />/</loc>
+          <lastmod><r:date format="%Y-%m-%d" /></lastmod>
+          <r:if_content part="changefreq"><changefreq><r:content part="changefreq" /></changefreq></r:if_content>
+          <r:unless_content part="changefreq"><changefreq>weekly</changefreq></r:unless_content>
+          <r:if_content part="priority"><priority><r:content part="priority" /></priority></r:if_content>
+        </url>
+        <r:snippet name='sitemap_xml' />
+      </r:find>
+    - "3"
+  - - "4"
+    - body.
+    - Textile
+    - |-
+      h2. Welcome Home
+      
+      This is the home page, you can "edit":/admin/pages/1/edit this page from within the radiant interface.
     - "1"
+  - - "5"
+    - body
+    - Textile
+    - |-
+      h2. Contact Us
+      
+      This is a contact page again you can "edit":/admin/pages/4/edit it and it will give you a chance to check out "forms":/admin/forms/1/edit.
+      
+      <r:form name='contact' />
+    - "4"
+  - - "7"
+    - sub
+    - Textile
+    - ""
+    - "4"
+  - - "8"
+    - body
+    - Textile
+    - |-
+      h2. Thanks For That
+      
+      That was a really champ thing you did there guy, we'll get back to you within the next few hours
+    - "5"
+  - - "9"
+    - body
+    - Textile
+    - |-
+      h2. We Appreciate That
+      
+      Thanks for signing up to find out more, we'll be sure to get you on our next mail out.
+    - "6"
 
 --- 
 pages: 
@@ -253,17 +521,246 @@ pages:
     - ""
     - "100"
     - 
-    - 
+    - "3"
     - 2010-03-29 06:57:23
-    - 2010-03-30 01:28:14
+    - 2010-03-31 16:04:58
     - 2010-03-29 00:00:00
     - "1"
     - "1"
     - false
-    - "1"
+    - "2"
     - ""
     - ""
     - 
+  - - "2"
+    - Oh No!
+    - oh-no
+    - Oh No!
+    - FileNotFoundPage
+    - "100"
+    - "1"
+    - 
+    - 2010-03-31 14:50:24
+    - 2010-03-31 15:18:36
+    - 2010-03-31 00:00:00
+    - "1"
+    - "1"
+    - true
+    - "3"
+    - ""
+    - ""
+    - "-1"
+  - - "3"
+    - sitemap.xml
+    - sitemap.xml
+    - sitemap.xml
+    - ""
+    - "100"
+    - "1"
+    - "1"
+    - 2010-03-31 14:52:08
+    - 2010-03-31 15:18:36
+    - 2010-03-31 00:00:00
+    - "1"
+    - "1"
+    - false
+    - "3"
+    - ""
+    - ""
+    - "0"
+  - - "4"
+    - Contact
+    - contact
+    - Contact
+    - ""
+    - "100"
+    - "1"
+    - "4"
+    - 2010-03-31 16:03:51
+    - 2010-03-31 16:11:56
+    - 2010-03-31 00:00:00
+    - "1"
+    - "1"
+    - false
+    - "2"
+    - ""
+    - ""
+    - 
+  - - "5"
+    - Thanks
+    - thanks
+    - Thanks
+    - ""
+    - "100"
+    - "4"
+    - 
+    - 2010-04-01 15:56:11
+    - 2010-04-01 15:56:11
+    - 2010-04-01 23:56:11
+    - "1"
+    - 
+    - false
+    - "0"
+    - ""
+    - ""
+    - 
+  - - "6"
+    - Newsletter
+    - newsletter
+    - Newsletter
+    - ""
+    - "100"
+    - "5"
+    - 
+    - 2010-04-01 16:07:59
+    - 2010-04-01 16:07:59
+    - 2010-04-02 00:07:59
+    - "1"
+    - 
+    - false
+    - "0"
+    - ""
+    - ""
+    - 
+
+--- 
+snippets: 
+  columns: 
+  - id
+  - name
+  - filter_id
+  - content
+  - created_at
+  - updated_at
+  - created_by_id
+  - updated_by_id
+  - lock_version
+  records: 
+  - - "1"
+    - sitemap_xml
+    - ""
+    - |-
+      <r:children:each>
+      <r:unless_content part='no-map'>
+        <url>
+          <loc><r:config:setting key='site.url' /><r:url /></loc>
+          <lastmod><r:date format='%Y-%m-%d' /></lastmod>  
+          <r:if_content part='changefreq'><changefreq><r:content part='changefreq' /></changefreq></r:if_content>
+          <r:unless_content part='changefreq'><changefreq>weekly</changefreq></r:unless_content>
+          <r:if_content part='priority'><priority><r:content part='priority' /></priority></r:if_content>
+        </url>
+        <r:snippet name='sitemap_xml' />
+      </r:unless_content>
+      </r:children:each>
+    - 2010-03-31 14:49:10
+    - 2010-03-31 15:42:06
+    - "1"
+    - "1"
+    - "6"
+  - - "2"
+    - sitemap
+    - ""
+    - |-
+      <r:children:each>
+      <r:unless_content part='no-map'>
+      <li>
+        <r:link />
+        <r:if_children>
+          <ul>
+            <r:snippet name='sitemap' />
+          </ul>
+        </r:if_children>
+      </li>
+      </r:unless_content>
+      </r:children:each>
+    - 2010-03-31 14:49:22
+    - 2010-03-31 15:40:07
+    - "1"
+    - "1"
+    - "2"
+  - - "3"
+    - meta
+    - ""
+    - |-
+      <title><r:config:setting key='site.title' /></title>
+      <r:meta />
+    - 2010-03-31 16:05:19
+    - 2010-04-01 06:56:10
+    - "1"
+    - "1"
+    - "1"
+  - - "4"
+    - stylesheets
+    - ""
+    - "<link type='text/css' media='screen' rel='stylesheet' href='/stylesheets/site/screen.css'> "
+    - 2010-03-31 16:05:23
+    - 2010-04-01 03:37:43
+    - "1"
+    - "1"
+    - "1"
+  - - "5"
+    - javascripts
+    - ""
+    - |-
+      <script type='text/javascript' src='http://www.google.com/jsapi'></script>
+      <script type='text/javascript'>
+        google.load('jquery', '1.4.2');
+        google.load('jqueryui', '1.8.0');
+      </script>
+      
+      <r:if_dev>
+      </r:if_dev>
+      <r:unless_dev>
+        <script type='text/javascript' src='/javascripts/modules/all.js'></script>
+      </r:unless_dev>
+      <!--[if IE]>
+        <script type='text/javascript' src='/javascripts/modules/jquery-curvycorners.js'></script>
+        <script type='text/javascript'>
+          $(document).ready(function() {
+            $('#nav li a').corner({ bl: { radius: 4 }, br: { radius: 4 }, tl: { radius: 0 }, tr: { radius: 0 } }).css('height', '25px');
+          });
+        </script>
+      <!--[if IE]>
+      <!--[if IE 6]>
+        <script type='text/javascript' src='/javascripts/modules/ie-warning.js'></script>
+      <![endif]-->
+      
+      <script type='text/javascript'> 
+        var gaJsHost = (('https:' == document.location.protocol) ? 'https://ssl.' : 'http://www.');
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        try
+        {
+          var pageTracker = _gat._getTracker("<r:config:setting key='site.analytics' />");
+          pageTracker._trackPageview();
+        } catch(err) {}
+      </script>
+    - 2010-03-31 16:05:36
+    - 2010-04-01 15:34:03
+    - "1"
+    - "1"
+    - "23"
+  - - "6"
+    - head
+    - ""
+    - |-
+      <div id='logo'><r:assets:image title='radiant' /></div>
+      <r:nav id='nav' include_root='true' except='.(xml)/*$' />
+    - 2010-03-31 16:06:27
+    - 2010-04-01 04:53:54
+    - "1"
+    - "1"
+    - "4"
+  - - "7"
+    - foot
+    - ""
+    - |-
+      <r:nav id='nav_alt' include_root='true' except='.(xml)/*$'/>
+      <span id='copyright'>we don't copyright, but your client will probably insist on it</span>
+    - 2010-03-31 16:06:48
+    - 2010-04-01 16:23:20
+    - "1"
+    - "1"
+    - "7"
 
 --- 
 users: 

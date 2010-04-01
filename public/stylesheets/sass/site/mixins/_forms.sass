@@ -1,0 +1,42 @@
+input[type=text]
+  :height                 = !line_height
+  :padding
+    :top                    4px
+  :font
+    :size                   16px  
+  :border                   0
+    :top                  = "#{!grey} 1px solid"
+    :left                 = "#{!grey+#111} 1px solid"
+    
+  &:active, &:focus
+    :border
+      :color              = "#{!grey-#222}"
+
+#newsletter_form
+
+  input
+    :float                    left
+
+  input[type=text]
+    :width                    55%
+    
+  input[type=submit]
+    :width                    35%
+    :margin                   0 0 0 5%
+    
+#contact_form
+  :margin                     10px
+  
+  li
+    :height                 = !line_height*2
+    :line
+      :height               = !line_height*2
+  
+  label
+    +grid(3)
+    :display                  block
+    
+  input[type=text]
+    +grid(5)
+    :margin
+      :top                  = !line_height*0.3

@@ -9,7 +9,7 @@ module FormTags
     results = []
     if name = tag.attr['name']
       if tag.locals.form = Form.first(:first, :conditions => {:title => name.strip})
-        tag.attr['id'] ||= "form_" + tag.locals.form.title
+        tag.attr['id'] ||= tag.locals.form.title + "_form"
         tag.attr['method'] ||= "post"
         tag.attr['action'] = tag.locals.form.action.empty? ? "/form/"+tag.locals.form.id.to_s : tag.locals.form.action
         
@@ -26,7 +26,7 @@ module FormTags
     results
   end
 
-  desc %{ form:label }
+  desc %{ Renders a label which is related to a form element with the 'for' attribute }
   tag 'form:label' do |tag|
     result = [%(<label #{form_attrs(tag)}>#{tag.expand}</label>)]
   end
@@ -61,6 +61,7 @@ module FormTags
       %(#{k}="#{v}")
     end.reject{|e| e.blank?}
     result << %(name="form[#{tag.attr['name']}]") unless tag.attr['name'].blank?
+    result << %(for="form[#{tag.attr['for']}]") unless tag.attr['for'].blank?
     result.join(' ')
   end
   

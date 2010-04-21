@@ -14,7 +14,7 @@ class Mailer < ActionMailer::Base
     files = options[:files] || []
     limit = options[:filesize_limit] || 0
     files.each do |f|
-      if(limit == 0 || f.size <= limit)
+      if(limit == nil || f.size <= limit)
         attachment(
           :content_type => "application/octet-stream",
           :body => f.read,

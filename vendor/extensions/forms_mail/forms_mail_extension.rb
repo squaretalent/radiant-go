@@ -24,7 +24,7 @@ class FormsMailExtension < Radiant::Extension
 
   def activate
     FormController.class_eval do
-      include MailController
+      include FormMailController
       alias_method_chain :process_form, :mail
     end
   end

@@ -104,6 +104,12 @@ ActiveRecord::Schema.define(:version => 20091003095744) do
   add_index "pages", ["slug", "parent_id"], :name => "pages_child_slug"
   add_index "pages", ["virtual", "status_id"], :name => "pages_published"
 
+  create_table "responses", :force => true do |t|
+    t.text     "result_json"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "sessions", :force => true do |t|
     t.string   "session_id"
     t.text     "data"

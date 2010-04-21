@@ -34,6 +34,7 @@ schema_migrations:
   - - Forms-1
   - - Forms-2
   - - Forms-3
+  - - Forms-4
   - - Paperclipped-1
   - - Paperclipped-2
   - - Paperclipped-20090316132151

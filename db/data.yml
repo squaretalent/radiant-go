@@ -584,6 +584,7 @@ snippets:
       <r:unless_dev>
         <script type='text/javascript' src='/javascripts/modules/all.js'></script>
       </r:unless_dev>
+      
       <!--[if IE]>
         <script type='text/javascript' src='/javascripts/modules/jquery-curvycorners.js'></script>
         <script type='text/javascript'>
@@ -591,9 +592,11 @@ snippets:
             $('#nav li a').corner({ bl: { radius: 4 }, br: { radius: 4 }, tl: { radius: 0 }, tr: { radius: 0 } }).css('height', '25px');
           });
         </script>
-      <!--[if IE]>
-      <!--[if IE 6]>
+      <![endif]-->
+      
+      <!--[if lt IE 7]>
         <script type='text/javascript' src='/javascripts/modules/ie-warning.js'></script>
+        <script style='text/javascript'>window.onload=function(){e("/images/modules/ie-warning/");}</script>
       <![endif]-->
       
       <script type='text/javascript'> 

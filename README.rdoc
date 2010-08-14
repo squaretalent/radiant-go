@@ -5,4 +5,4 @@ a script that is used to create a new radiant project with extensions attached a
 == overriding files
 
 use the --force parameter to overwrite any existing files. by default files that already exist are skipped
-    radiant-go existing_project --force
+  radiant-go existing_project --force

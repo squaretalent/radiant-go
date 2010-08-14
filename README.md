@@ -1,5 +1,3 @@
-== Welcome to NEWRadiant
+== radiant-go
 
-    rake db:import
-  
-    ruby script/server
+a script that is used to create a new radiant project with extensions attached and ready to use

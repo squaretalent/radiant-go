@@ -12,16 +12,16 @@ require 'radius'
 Radiant::Initializer.run do |config|
   # Skip frameworks you're not going to use (only works if using vendor/rails).
   # To use Rails without a database, you must remove the Active Record framework
-  config.frameworks -= [ :action_mailer ]
 
   # Only load the extensions named here, in the order given. By default all
   # extensions in vendor/extensions are loaded, in alphabetical order. :all
   # can be used as a placeholder for all extensions not explicitly named.
-  # config.extensions = [ :all ]
+  config.extensions = [:textile_filter, :layouts, :settings, :redirect, :navigation, :import_export, :drag,
+                       :forms, :forms_mail, :paperclipped]
   
   # By default, only English translations are loaded. Remove any of these from
   # the list below if you'd like to provide any of the supported languages
-  config.extensions -= [:dutch_language_pack, :french_language_pack, :german_language_pack,
+  config.extensions -= [:markdown_filter, :dutch_language_pack, :french_language_pack, :german_language_pack,
                         :italian_language_pack, :japanese_language_pack, :russian_language_pack]
 
   # Your secret key for verifying cookie session data integrity.
@@ -29,8 +29,8 @@ Radiant::Initializer.run do |config|
   # Make sure the secret is at least 30 characters and all random,
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
-    :key => '_radiant-go_session',
-    :secret      => 'ac4b3bec2bc6ae476786a1416e064a4572daf6d3'
+    :session_key => '_newr_session',
+    :secret      => '82f81ab718e62de103f44cc031f40bf90fedaef3'
   }
 
   # Comment out this line if you want to turn off all caching, or
@@ -68,13 +68,11 @@ Radiant::Initializer.run do |config|
   # Set the default field error proc
   config.action_view.field_error_proc = Proc.new do |html, instance|
     if html !~ /label/
-      %{<span class="error-with-field">#{html} <span class="error">#{[instance.error_message].flatten.first}</span></span>}
+      %{<span class="error-with-field">#{html} <span class="error">&bull; #{[instance.error_message].flatten.first}</span></span>}
     else
       html
     end
   end
-
-  config.gem 'will_paginate', :version => '~> 2.3.11', :source => 'http://gemcutter.org'
 
   config.after_initialize do
     # Add new inflection rules using the following format:

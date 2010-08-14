@@ -1,7 +1,5 @@
 // Originally based on code from:
 //   http://ajaxian.com/archives/handling-tabs-in-textareas
-// Expanding textarea based on Stack Overflow discussion
-//   http://stackoverflow.com/questions/7477/autosizing-textarea/948445#948445
 
 var CodeAreaBehavior = Behavior.create({
   initialize: function() {
@@ -12,10 +10,7 @@ var CodeAreaBehavior = Behavior.create({
 var CodeArea = Class.create({
   initialize: function(element) {
     this.element = $(element);
-    this.prepareAutosize(this.element);
-    
     this.element.observe('keydown', this.onkeydown.bind(this));
-    this.element.observe('keyup', this.onkeyup.bind(this));
   },
   
   onkeydown: function(event) {
@@ -143,19 +138,6 @@ var CodeArea = Class.create({
       }
     }
   },
-
-  onkeyup: function(event) {
-    var t = this.element;
-
-    // Copy the contents of the textarea into the shadow div 
-    // $F() is a form value selector
-    // We will be using html, so it needs to be escaped, could have also replaced < with { to be more size accurate
-    t._shadow.update($F(this.element).escapeHTML().replace(/\n/g, '<br/>'));
-
-    $(t).setStyle({ 
-      height : parseInt(t._shadow.getStyle('height')) + parseInt($(t).getStyle('lineHeight')) + 'px' 
-    });
-  },
   
   normalizeSelection: function(textarea) {
     var b = 0;
@@ -179,29 +161,5 @@ var CodeArea = Class.create({
       textarea.selectionStart = ss;
       textarea.selectionEnd = se;
     }
-  },
-
-  prepareAutosize: function(textarea) {
-    // Default styling to support autosize
-    textarea.setStyle({ 
-      overflow    : 'hidden',
-      minHeight   : textarea.getStyle('height'),
-      lineHeight  : '18px' // IE and WEBKIT are returning false values for lineheight
-    });
-
-    textarea._shadow = new Element('div').setStyle({
-      fontSize    : textarea.getStyle('fontSize'),
-      fontFamily  : textarea.getStyle('fontFamily'),
-      lineHeight  : textarea.getStyle('lineHeight'),
-      width       : textarea.getWidth() + 'px',
-      position    : 'absolute',
-      top         : '-10000px',
-      left        : '-10000px'
-    });
-
-    // Insert the shadow element, it will go all the way over there though
-    this.element.insert({ after: this.element._shadow });
-
-    this.onkeyup();
   }
 });

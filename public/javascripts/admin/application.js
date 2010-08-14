@@ -64,10 +64,6 @@ Event.addBehavior({
     }
   }),
   
-  // We get the initial height by comparing scroll size, you can't do that with a hidden element
-  'form textarea': CodeAreaBehavior(),
-  
-  // So now that they have been resized we hide the textareas  
   'div#tab_control': TabControlBehavior(),
   
   'table.index': RuledTableBehavior(),
@@ -78,7 +74,12 @@ Event.addBehavior({
     this.activate();
   },
   
+  'form textarea': CodeAreaBehavior(),
+  
   'input.date': DateInputBehavior(),
   
-  'select#page_status_id':  PageStatusBehavior()
+  'select#page_status_id':  PageStatusBehavior(),
+  
+  'span.error':  ValidationErrorBehavior()
+  
 });

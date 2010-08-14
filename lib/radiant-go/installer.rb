@@ -19,6 +19,8 @@ module RadiantGo
         generate_radiant_project(@project_name, @force)
         puts 'copying gemfile'
         copy_gemfile(@project_name)
+        puts 'bundler is installing gems'
+        bundle_install(@project_name)
       end
     
     end
@@ -40,6 +42,9 @@ module RadiantGo
 
   
     def generate_radiant_project(name, force)
+      
+      # todo: the below calls works fine, although it might be a bit nicer if the 
+      # radiant gem can be invoked rather than having to run a system command
       if force
         %x[radiant #{name} --force]
       else
@@ -59,6 +64,11 @@ module RadiantGo
         target.write( source.read(64) ) while not source.eof?
       end
 
+    end
+    
+    def bundle_install(name)
+      # todo: below currently doesn't work. Will need to use the module provided with the gem 'Bundler'
+      puts %x["bundle install --gemfile #{name}/Gemfile"]
     end
 
   end

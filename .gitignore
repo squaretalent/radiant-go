@@ -1,5 +1,1 @@
-config/database.yml
-*.DS_Store
-*.sqlite3.db
-*.log
-tmp
+*.gem

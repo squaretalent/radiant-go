@@ -1,0 +1,10 @@
+source 'http://rubygems.org'
+
+gem 'rails',              '2.5.8'
+gem 'sqlite3-ruby',       :require => 'sqlite3'
+gem 'haml',               '>= 3.0.0'
+gem 'compass',            '>= 0.10.4'
+gem 'compass-960-plugin', '>= 0.9.13'
+gem 'rmagick',            '>= 2.13.1'
+gem 'aws-s3',             '>= 0.6.2', :require => 'aws/s3'
+gem 'paperclip',          '>= 2.3.3'

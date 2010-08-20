@@ -4,12 +4,12 @@ module RadiantGo
 
     class Base
   
-      def initialize(name, required_gems, force = false)    
+      def initialize(name, force = false)    
       
         @project_name  = name
-        @database      = 'sqlite3' #todo: move to a config file
         @force         = force
-        @required_gems = required_gems
+        @database      = Config.database
+        @required_gems = Config.required_gems
       
       end
   

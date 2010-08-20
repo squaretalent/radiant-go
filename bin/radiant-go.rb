@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 
-$LOAD_PATH.unshift File.dirname(__FILE__) + '/../lib'
-require 'radiant-go'
+require 'lib/radiant-go'
 
 if ARGV.size == 0
   puts 'please specify a project name' 
@@ -14,7 +13,7 @@ else
   if version == true
     puts RadiantGo::Main.version
   else
-    installer = RadiantGo::Installers::Base.new(name, RadiantGo::Main.required_gems, force)
+    installer = RadiantGo::Installers::Base.new(name, force)
     installer.run()
   end
   

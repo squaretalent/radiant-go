@@ -1,7 +1,11 @@
 #!/usr/bin/env ruby
 
 require 'rubygems'
-require File.expand_path(File.dirname(__FILE__)) + '/radiant-go/installer.rb'
+require 'radiant-go'
+
+current_dir = File.expand_path(File.dirname(__FILE__))
+
+require current_dir + '/radiant-go/installer.rb'
 
 module RadiantGo
 

@@ -24,7 +24,7 @@ module RadiantGo
           radiant.create
           puts '== copying gemfile'
           copy_gemfile(@project_name)
-          puts '== bundler is installing gems, this can take a few minutes'
+          puts '== bundler is installing gems'
           bundler.install
           puts '== running bootstrap'
           radiant.bootstrap

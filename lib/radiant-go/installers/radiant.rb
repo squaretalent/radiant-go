@@ -1,5 +1,4 @@
 require 'bundler'
-require 'bundler/definition'
 
 module RadiantGo
   
@@ -28,24 +27,42 @@ module RadiantGo
       end
       
       def update_config
+        
         Dir.chdir(@name) do
         
-          config  = File.open('config/environment.rb', 'r+')
-          line    = ''
+          # open our config
+          config_file   = File.open('config/environment.rb', 'r')
+          config_string = ''
+          line          = ''
           
+          # read up to the part where we are loading gems
           while(line.index('config.gem') == nil)
-            line = config.gets
+            line          = config_file.gets
+            config_string += line
           end
             
-          config.write "\n"
-        
           gems = ::Bundler::Definition.from_gemfile('Gemfile').dependencies
           
+          # loop through all our gems and add the lines we need for config
           gems.each do |gem|
             
-            #todo: finish! Need to check for radiant extensions and add to environment.rb
+            # we only want radiant extensions
+            if gem.name =~ /^radiant-.*-extension$/
+              config_string += "  config.gem '#{gem.name}', :version => '#{gem.requirement}', :lib => false\n"
+            end
             
           end
+          
+          # read the rest of the config 
+          while(line = config_file.gets)
+            config_string += line
+          end
+          
+          # close the file, open it for reading and dump our string
+          config_file.close
+          config_file = File.open('config/environment.rb', 'w')
+          
+          config_file.write(config_string)
           
         end
         

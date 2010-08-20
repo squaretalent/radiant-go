@@ -9,13 +9,16 @@ module RadiantGo
         @name     = name
         @database = database
         @force    = force
-
         
       end
       
       def run
         
-        # todo: will run the radiant install
+        if @force
+          %x[radiant #{@name} --force --database=#{@database}]
+        else
+          %x[radiant #{@name} --skip --database=#{@database}]
+        end
         
       end
 

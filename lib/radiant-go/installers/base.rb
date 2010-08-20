@@ -7,7 +7,7 @@ module RadiantGo
       def initialize(name, required_gems, force = false)    
       
         @project_name  = name
-        @database      = 'sqlite3'
+        @database      = 'sqlite3' #todo: move to a config file
         @force         = force
         @required_gems = required_gems
       
@@ -46,16 +46,6 @@ module RadiantGo
         
         radiant_generator = Installers::Radiant.new(name, @database, force)
         radiant_generator.run
-      
-        # todo: the below calls works fine, although it might be a bit nicer if the 
-        # radiant gem can be invoked rather than having to run a system command
-        # if force
-        #   %x[radiant #{name} --force --database=sqlite3]
-        # else
-        #   %x[radiant #{name} --skip --database=sqlite3]
-        # end
-        
-        
         
       end
     
@@ -74,16 +64,12 @@ module RadiantGo
       end
     
       def bundle_install(name)
+       
         # todo: below currently doesn't work. Will need to use the module provided with the gem 'Bundler'
-      
         require 'bundler'
-      
-      
         bundler = Bundler::Installer.new(name, "#{name}/Gemfile")
-      
-      
-      
         #puts %x["bundle install --gemfile #{name}/Gemfile"]
+        
       end
 
     end

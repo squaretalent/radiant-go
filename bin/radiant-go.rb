@@ -7,20 +7,10 @@ if ARGV.size == 0
   puts 'please specify a project name' 
 else
   
-  name    = ARGV.shift unless ARGV[0] == '-v' || ARGV[0] == '--version'
-  force   = false
-  version = false
-  
-  ARGV.each do |arg|
-    if arg == '--force'
-      force = true
-    elsif arg == '-v' || arg == '--version'
-      version = true
-    else
-      raise "unknown argument #{arg}"
-    end
-  end
-  
+  force   = ARGV.any? {|arg| arg == '-f' || arg == '--force'}   ? true : false
+  version = ARGV.any? {|arg| arg == '-v' || arg == '--version'} ? true : false
+  name    = ARGV.shift
+
   if version == true
     puts RadiantGo::Main.version
   else

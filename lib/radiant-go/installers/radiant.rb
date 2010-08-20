@@ -1,5 +1,3 @@
-require 'bundler'
-
 module RadiantGo
   
   module Installers
@@ -41,16 +39,9 @@ module RadiantGo
             config_string += line
           end
             
-          gems = ::Bundler::Definition.from_gemfile('Gemfile').dependencies
-          
-          # loop through all our gems and add the lines we need for config
-          gems.each do |gem|
-            
-            # we only want radiant extensions
-            if gem.name =~ /^radiant-.*-extension$/
-              config_string += "  config.gem '#{gem.name}', :version => '#{gem.requirement}', :lib => false\n"
-            end
-            
+          # loop through all our radiant extensions and add the lines we need for config
+          Main.all_extensions.each do |gem|
+            config_string += "  config.gem '#{gem.name}', :version => '#{gem.requirement}', :lib => false\n"
           end
           
           # read the rest of the config 

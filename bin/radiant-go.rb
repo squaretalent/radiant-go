@@ -13,7 +13,7 @@ else
   if version == true
     puts RadiantGo::Main.version
   else
-    installer = RadiantGo::Installers::Base.new(name, force)
+    installer = RadiantGo::Installers::Main.new(name, force)
     installer.run()
   end
   

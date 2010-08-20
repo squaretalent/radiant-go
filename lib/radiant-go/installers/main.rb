@@ -2,7 +2,7 @@ module RadiantGo
   
   module Installers
 
-    class Base
+    class Main
   
       def initialize(name, force = false)    
       
@@ -41,7 +41,7 @@ module RadiantGo
     
         gems.each do |gem|
           unless Gem.available?(gem[:name], gem[:requirements])
-            puts "the gem #{gem[:name]} v#{gem[:requirements]} is required. please install it and run radiant-go again"
+            puts 'the gem ' + gem[:name] + ' v' + gem[:requirements] + ' is required. please install it and run radiant-go again'
             valid = false
           end
         end
@@ -63,6 +63,22 @@ module RadiantGo
           target.close
         end
 
+      end
+      
+      def self.all_extensions
+        
+        extensions = []
+        gems       = ::Bundler::Definition.from_gemfile('Gemfile').dependencies
+
+        gems.each do |gem|
+          
+          # we only want radiant extensions
+          if gem.name =~ /^radiant-.*-extension$/
+            extensions.push(gem)
+          end
+          
+        end
+        extensions
       end
 
     end

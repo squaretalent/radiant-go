@@ -20,15 +20,15 @@ module RadiantGo
           radiant = Installers::Radiant.new(@project_name, @database, @force)
           bundler = Installers::Bundler.new(@project_name)
           
-          puts 'generating radiant project'
+          puts '== generating radiant project'
           radiant.create
-          puts 'copying gemfile'
+          puts '== copying gemfile'
           copy_gemfile(@project_name)
-          puts 'bundler is installing gems, this can take a few minutes'
+          puts '== bundler is installing gems, this can take a few minutes'
           bundler.install
-          puts 'running bootstrap'
+          puts '== running bootstrap'
           radiant.bootstrap
-          puts 'updating config'
+          puts '== updating config'
           radiant.update_config
           
         end

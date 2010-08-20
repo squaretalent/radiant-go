@@ -10,7 +10,7 @@ module RadiantGo
       
       def install
         Dir.chdir(@name) do
-          puts %x[bundle install]
+          puts %x[bundle lock;bundle install;bundle unlock]
         end
       end
 

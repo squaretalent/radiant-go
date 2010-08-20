@@ -28,6 +28,8 @@ module RadiantGo
           bundler.install
           puts 'running bootstrap'
           radiant.bootstrap
+          puts 'updating config'
+          radiant.update_config
           
         end
     
@@ -58,6 +60,7 @@ module RadiantGo
           target = File.open(name + '/Gemfile', 'w')
 
           target.write( source.read(64) ) while not source.eof?
+          target.close
         end
 
       end

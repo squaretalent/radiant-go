@@ -43,10 +43,7 @@ module RadiantGo
 
   
       def generate_radiant_project(name, force)
-        
-        radiant_generator = Installers::Radiant.new(name, @database, force)
-        radiant_generator.run
-        
+        Installers::Radiant.new(name, @database, force).run
       end
     
       def copy_gemfile(name)
@@ -64,12 +61,7 @@ module RadiantGo
       end
     
       def bundle_install(name)
-       
-        # todo: below currently doesn't work. Will need to use the module provided with the gem 'Bundler'
-        require 'bundler'
-        bundler = Bundler::Installer.new(name, "#{name}/Gemfile")
-        #puts %x["bundle install --gemfile #{name}/Gemfile"]
-        
+        Installers::Bundler.new(name).run
       end
 
     end

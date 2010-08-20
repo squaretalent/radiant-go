@@ -24,10 +24,10 @@ module RadiantGo
           radiant.create
           puts 'copying gemfile'
           copy_gemfile(@project_name)
-          puts 'bundler is installing gems'
+          puts 'bundler is installing gems, this can take a few minutes'
           bundler.install
-          puts 'updating radiant'
-          radiant.update
+          puts 'running bootstrap'
+          radiant.bootstrap
           
         end
     

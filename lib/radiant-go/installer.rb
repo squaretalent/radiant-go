@@ -66,7 +66,15 @@ module RadiantGo
     
     def bundle_install(name)
       # todo: below currently doesn't work. Will need to use the module provided with the gem 'Bundler'
-      puts %x["bundle install --gemfile #{name}/Gemfile"]
+      
+      require 'bundler'
+      
+      
+      bundler = Bundler::Installer.new(name, "#{name}/Gemfile")
+      
+      
+      
+      #puts %x["bundle install --gemfile #{name}/Gemfile"]
     end
 
   end

@@ -2,13 +2,11 @@ module RadiantGo
 
   class Installer
   
-    def initialize(name, force = false)    
+    def initialize(name, required_gems, force = false)    
       
       @project_name  = name
       @force         = force
-      @required_gems =  
-      [ { :name => 'radiant', :requirements => '>= 0.9.1'   },
-        { :name => 'bundler', :requirements => '>= 0.9.26'  } ]
+      @required_gems = required_gems
       
     end
   

@@ -44,9 +44,9 @@ module RadiantGo
       # todo: the below calls works fine, although it might be a bit nicer if the 
       # radiant gem can be invoked rather than having to run a system command
       if force
-        %x[radiant #{name} --force]
+        %x[radiant #{name} --force --database=sqlite3]
       else
-        %x[radiant #{name} --skip]
+        %x[radiant #{name} --skip --database=sqlite3]
       end
     end
     

@@ -21,4 +21,7 @@ else
   installer = RadiantGo::Installer.new(name, RadiantGo::Main.required_gems, force)
   installer.run()
   
+  
+  puts RadiantGo::Main.version
+  
 end

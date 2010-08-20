@@ -16,12 +16,19 @@ module RadiantGo
       def run
     
         if has_required_gems?(@required_gems)
+          
+          radiant = Installers::Radiant.new(@project_name, @database, @force)
+          bundler = Installers::Bundler.new(@project_name)
+          
           puts 'generating radiant project'
-          generate_radiant_project(@project_name, @force)
+          radiant.create
           puts 'copying gemfile'
           copy_gemfile(@project_name)
           puts 'bundler is installing gems'
-          bundle_install(@project_name)
+          bundler.install
+          puts 'updating radiant'
+          radiant.update
+          
         end
     
       end
@@ -41,11 +48,6 @@ module RadiantGo
     
       end
 
-  
-      def generate_radiant_project(name, force)
-        Installers::Radiant.new(name, @database, force).run
-      end
-    
       def copy_gemfile(name)
       
         # we only copy the file if it doesn't exist or if force is on!
@@ -58,10 +60,6 @@ module RadiantGo
           target.write( source.read(64) ) while not source.eof?
         end
 
-      end
-    
-      def bundle_install(name)
-        Installers::Bundler.new(name).run
       end
 
     end

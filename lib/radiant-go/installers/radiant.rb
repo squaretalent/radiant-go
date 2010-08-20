@@ -10,14 +10,18 @@ module RadiantGo
         @force    = force
       end
       
-      def run
+      def create
         if @force
           %x[radiant #{@name} --force --database=#{@database}]
         else
           %x[radiant #{@name} --skip --database=#{@database}]
         end
       end
-
+      
+      def update
+        #todo: finish
+      end
+      
     end
     
   end

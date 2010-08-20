@@ -8,7 +8,7 @@ module RadiantGo
         @name = name
       end
       
-      def run
+      def install
         Dir.chdir(@name) do
           %x[bundle install]
         end

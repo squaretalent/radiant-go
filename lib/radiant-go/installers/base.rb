@@ -7,6 +7,7 @@ module RadiantGo
       def initialize(name, required_gems, force = false)    
       
         @project_name  = name
+        @database      = 'sqlite3'
         @force         = force
         @required_gems = required_gems
       
@@ -42,14 +43,20 @@ module RadiantGo
 
   
       def generate_radiant_project(name, force)
+        
+        radiant_generator = Installers::Radiant.new(name, @database, force)
+        radiant_generator.run
       
         # todo: the below calls works fine, although it might be a bit nicer if the 
         # radiant gem can be invoked rather than having to run a system command
-        if force
-          %x[radiant #{name} --force --database=sqlite3]
-        else
-          %x[radiant #{name} --skip --database=sqlite3]
-        end
+        # if force
+        #   %x[radiant #{name} --force --database=sqlite3]
+        # else
+        #   %x[radiant #{name} --skip --database=sqlite3]
+        # end
+        
+        
+        
       end
     
       def copy_gemfile(name)

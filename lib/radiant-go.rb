@@ -6,6 +6,7 @@ require 'radiant-go'
 current_dir = File.expand_path(File.dirname(__FILE__))
 
 require current_dir + '/radiant-go/installers/base.rb'
+require current_dir + '/radiant-go/installers/radiant.rb'
 
 module RadiantGo
 

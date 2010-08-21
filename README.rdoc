@@ -1,6 +1,8 @@
 = radiant-go
 
 a script that is used to create a new radiant project with extensions attached and ready to use
+to create a new project simply run:
+  radiant-go projectname
 
 == overriding files
 

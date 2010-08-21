@@ -51,24 +51,39 @@ module RadiantGo
       end
       
       it 'should create a non empty database file upon bootstrap' do
+        
         File.exists?('test/db/development.' + Config.database + '.db').should be false
         @installer.bootstrap
         File.exists?('test/db/development.' + Config.database + '.db').should be true
         File.size('test/db/development.' + Config.database + '.db').should be > 0
+        
       end
       
       it 'should alter the configuration in the environment file' do
+        
         # the size of the file should increase after it is altered
         size = File.size('test/config/environment.rb')
         @installer.update_config
         File.size('test/config/environment.rb').should_not be size
+        
       end
       
       it 'should update all extensions' do
-        # the size of the public directory should increase after an extensions update
-        size = File.stat('test/public/').size
+        
+        # the contents of the public folder should change
+        contents = %x[du test/public/]
         @installer.update_extensions
-        File.stat('test/public/').size.should_not be size
+        %x[du test/public/].should_not be contents
+        
+      end
+      
+      it 'should migrate all extensions' do
+        
+        # migrating should cause the database to grow
+        size = File.size('test/db/development.' + Config.database + '.db')
+        @installer.migrate_extensions
+        File.size('test/db/development.' + Config.database + '.db').should be > size
+        
       end
 
     end

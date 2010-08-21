@@ -30,6 +30,10 @@ module RadiantGo
           radiant.bootstrap
           puts '== updating config'
           radiant.update_config
+          puts '== updating extensions'
+          radiant.update_extensions
+          puts '== migrating extensions'
+          radiant.migrate_extensions
           
         end
     
@@ -61,6 +65,7 @@ module RadiantGo
 
           target.write( source.read(64) ) while not source.eof?
           target.close
+          source.close
         end
 
       end

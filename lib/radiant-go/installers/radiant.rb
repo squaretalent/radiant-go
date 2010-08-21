@@ -54,7 +54,28 @@ module RadiantGo
           config_file = File.open('config/environment.rb', 'w')
           
           config_file.write(config_string)
+          config_file.close
           
+        end
+        
+      end
+      
+      def update_extensions
+        
+        Dir.chdir(@name) do
+          %x[rake radiant:extensions:update_all]
+        end
+        
+      end
+      
+      def migrate_extensions
+        
+        Dir.chdir(@name) do
+          Main.all_extensions.each do |gem|
+            # we need to use the short name for our migration, eg forms instead of radiant-forms-extension
+            extension = gem.name.scan(/^radiant-(.*)-extension$/)
+            %x[rake radiant:extensions:#{extension}:migrate]
+          end
         end
         
       end

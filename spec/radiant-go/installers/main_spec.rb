@@ -6,18 +6,6 @@ module RadiantGo
     
     describe Main do
       
-      it 'should be able to return an array of extensions required' do
-        Main.all_extensions.kind_of?(Array).should be true
-      end
-      
-      it 'should list at least one extension' do
-        Main.all_extensions.size.should be > 0
-      end
-      
-    end
-
-    describe Main, 'with forcing turned off' do
-    
       before(:each) do
         Dir.mkdir 'test'
         @main = Main.new('test', false)
@@ -26,7 +14,15 @@ module RadiantGo
       after(:each) do
         FileUtils.rm_rf 'test'
       end
-  
+      
+      it 'should be able to return an array of extensions required' do
+        Main.all_extensions.kind_of?(Array).should be true
+      end
+      
+      it 'should list at least one extension' do
+        Main.all_extensions.size.should be > 0
+      end
+      
       it 'should create a copy of the gemfile' do
         @main.copy_gemfile('test')
         File.exists?('test/Gemfile').should be true
@@ -38,7 +34,7 @@ module RadiantGo
         File.zero?('test/Gemfile').should_not be true
       end
       
-      it 'should not write over an existing gemfile' do
+      it 'should not write over an existing gemfile when force is off' do
         
         # we create a new gemfile and make it blank
         gemfile = File.new('test/Gemfile', File::CREAT)
@@ -51,20 +47,10 @@ module RadiantGo
         File.size('test/Gemfile').should be 0
       end
       
-    end
-    
-    describe Main, 'with forcing turned on' do
-
-      before(:each) do
-        Dir.mkdir 'test'
-        @main = Main.new('test', true)
-      end
-
-      after(:each) do
-        FileUtils.rm_rf 'test'
-      end
-
       it 'should write over an existing gemfile' do
+        
+        # turn forcing on
+        @main = Main.new('test', true)
         
         # we create a new gemfile and make it blank
         gemfile = File.new('test/Gemfile', File::CREAT)
@@ -76,7 +62,7 @@ module RadiantGo
         File.exists?('test/Gemfile').should be true
         File.size('test/Gemfile').should be > 0
       end
-        
+      
     end
 
   end

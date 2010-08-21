@@ -3,6 +3,18 @@ require File.dirname(__FILE__) + '/../spec_helper'
 module RadiantGo
 
   module Installers
+    
+    describe Main do
+      
+      it 'should be able to return an array of extensions required' do
+        Main.all_extensions.kind_of?(Array).should be true
+      end
+      
+      it 'should list at least one extension' do
+        Main.all_extensions.size.should be > 0
+      end
+      
+    end
 
     describe Main, 'with forcing turned off' do
     
@@ -67,7 +79,6 @@ module RadiantGo
         File.size('test/Gemfile').should be > 0
       end
         
-      
     end
 
   end

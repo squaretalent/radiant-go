@@ -52,8 +52,9 @@ module RadiantGo
       
       def self.all_extensions
         
-        extensions = []
-        gems       = ::Bundler::Definition.from_gemfile('Gemfile').dependencies
+        current_dir = File.expand_path(File.dirname(__FILE__))
+        extensions  = []
+        gems        = ::Bundler::Definition.from_gemfile(current_dir + '/../Gemfile').dependencies
 
         gems.each do |gem|
           

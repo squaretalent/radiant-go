@@ -3,7 +3,7 @@ require 'spec/rake/spectask'
 
 begin
   
-  require 'jeweler' # it's here and not up there so that it doesn't throw if jeweler isn't installed (end users don't need it)
+  require 'jeweler' # it's here and not up, if jeweler isn't installed, the rescue below will catch (end users don't need it)
   
   Jeweler::Tasks.new do |gem|
     gem.name = "radiant-go"

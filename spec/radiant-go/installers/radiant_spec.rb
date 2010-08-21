@@ -63,6 +63,13 @@ module RadiantGo
         @installer.update_config
         File.size('test/config/environment.rb').should_not be size
       end
+      
+      it 'should update all extensions' do
+        # the size of the public directory should increase after an extensions update
+        size = File.stat('test/public/').size
+        @installer.update_extensions
+        File.stat('test/public/').size.should_not be size
+      end
 
     end
     

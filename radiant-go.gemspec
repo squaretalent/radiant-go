@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "bin/radiant-go",
      "config/config.rb",
      "lib/radiant-go.rb",
      "lib/radiant-go/Gemfile",

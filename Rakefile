@@ -1,5 +1,10 @@
+require 'rake'
+require 'spec/rake/spectask'
+
 begin
-  require 'jeweler'
+  
+  require 'jeweler' # it's here and not up there so that it doesn't throw if jeweler isn't installed (end users don't need it)
+  
   Jeweler::Tasks.new do |gem|
     gem.name = "radiant-go"
     gem.summary = 'a quicker and easier way to setup radiant projects'
@@ -13,4 +18,9 @@ begin
   Jeweler::GemcutterTasks.new
 rescue LoadError
   puts "Jeweler (or a dependency) not available. This is only required if you plan to package radiant-go as a gem."
+end
+
+desc 'run all specs'
+Spec::Rake::SpecTask.new('spec') do |t|
+  t.spec_files = FileList['spec/**/*.rb']
 end

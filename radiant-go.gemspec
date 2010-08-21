@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["mariovisic"]
-  s.date = %q{2010-08-21}
+  s.date = %q{2010-08-22}
   s.default_executable = %q{radiant-go}
   s.description = %q{a quick an easy way to create radiant projects that are ready to use straight away, automatically perform bootstraps, migrations and updates for radiant and extensions, radiant-go is completely customizable little orphan awesome}
   s.email = %q{mario@mariovisic.com}
@@ -30,13 +30,23 @@ Gem::Specification.new do |s|
      "lib/radiant-go/installers/bundler.rb",
      "lib/radiant-go/installers/main.rb",
      "lib/radiant-go/installers/radiant.rb",
-     "radiant-go.gemspec"
+     "radiant-go.gemspec",
+     "spec/radiant-go/installers/main_spec.rb",
+     "spec/radiant-go/installers/radiant_spec.rb",
+     "spec/rcov.opts",
+     "spec/spec.opts",
+     "spec/spec_helper.rb"
   ]
   s.homepage = %q{http://github.com/squaretalent/radiant-go}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{a quicker and easier way to setup radiant projects}
+  s.test_files = [
+    "spec/radiant-go/installers/main_spec.rb",
+     "spec/radiant-go/installers/radiant_spec.rb",
+     "spec/spec_helper.rb"
+  ]
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION

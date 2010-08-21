@@ -10,10 +10,10 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["mariovisic"]
   s.date = %q{2010-08-21}
-  s.default_executable = %q{radiant-go.rb}
+  s.default_executable = %q{radiant-go}
   s.description = %q{a quick an easy way to create radiant projects that are ready to use straight away, automatically perform bootstraps, migrations and updates for radiant and extensions, radiant-go is completely customizable little orphan awesome}
   s.email = %q{mario@mariovisic.com}
-  s.executables = ["radiant-go.rb"]
+  s.executables = ["radiant-go"]
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
@@ -22,14 +22,14 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
-     "bin/radiant-go.rb",
      "config/config.rb",
      "lib/radiant-go.rb",
      "lib/radiant-go/Gemfile",
      "lib/radiant-go/config.rb",
      "lib/radiant-go/installers/bundler.rb",
      "lib/radiant-go/installers/main.rb",
-     "lib/radiant-go/installers/radiant.rb"
+     "lib/radiant-go/installers/radiant.rb",
+     "radiant-go.gemspec"
   ]
   s.homepage = %q{http://github.com/squaretalent/radiant-go}
   s.rdoc_options = ["--charset=UTF-8"]

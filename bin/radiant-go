@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
-require 'lib/radiant-go'
+current_dir = File.expand_path(File.dirname(__FILE__))
+require current_dir + '/../lib/radiant-go'
 
 if ARGV.size == 0
   puts 'please specify a project name' 

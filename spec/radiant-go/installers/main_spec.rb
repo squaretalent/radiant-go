@@ -24,8 +24,7 @@ module RadiantGo
       end
       
       after(:each) do
-        File.delete 'test/Gemfile'
-        Dir.rmdir 'test'
+        FileUtils.rm_rf 'test'
       end
   
       it 'should create a copy of the gemfile' do
@@ -62,8 +61,7 @@ module RadiantGo
       end
 
       after(:each) do
-        File.delete 'test/Gemfile'
-        Dir.rmdir 'test'
+        FileUtils.rm_rf 'test'
       end
 
       it 'should write over an existing gemfile' do

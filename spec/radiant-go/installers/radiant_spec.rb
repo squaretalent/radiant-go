@@ -7,7 +7,7 @@ module RadiantGo
     describe Radiant do
       
       before(:all) do
-        @installer = Radiant.new('test', Config.database, false)
+        @installer = Radiant.new('test', Config.database)
       end
       
       after(:all) do
@@ -30,23 +30,6 @@ module RadiantGo
         # it shouldn't override
         @installer.create
         File.size('test/README').should be 0
-        
-      end
-      
-      it 'should write over existing project files when force is on' do
-        
-        # turn force on
-        @installer = Radiant.new('test', Config.database, true)
-        
-        # make the README blank (could be any radiant file instead of README)
-        File.delete 'test/README'
-        readme = File.new('test/README', File::CREAT)
-        readme.close
-        File.size('test/README').should be 0
-        
-        # it should ovveride
-        @installer.create
-        File.size('test/README').should be > 0
         
       end
       

@@ -8,7 +8,7 @@ module RadiantGo
       
       before(:each) do
         Dir.mkdir 'test'
-        @main = Main.new('test', false)
+        @main = Main.new('test')
       end
       
       after(:each) do
@@ -29,7 +29,6 @@ module RadiantGo
       end
       
       it 'should have a gemfile that isn\'t empty' do
-        @main = Main.new('test', false)
         @main.copy_gemfile('test')
         File.zero?('test/Gemfile').should_not be true
       end
@@ -46,23 +45,7 @@ module RadiantGo
         File.exists?('test/Gemfile').should be true
         File.size('test/Gemfile').should be 0
       end
-      
-      it 'should write over an existing gemfile' do
-        
-        # turn forcing on
-        @main = Main.new('test', true)
-        
-        # we create a new gemfile and make it blank
-        gemfile = File.new('test/Gemfile', File::CREAT)
-        gemfile.close
-        File.size('test/Gemfile').should be 0
-        
-        # we copy the file over our gemfile, now it should have a different filesize
-        @main.copy_gemfile('test')
-        File.exists?('test/Gemfile').should be true
-        File.size('test/Gemfile').should be > 0
-      end
-      
+            
     end
 
   end

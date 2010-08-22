@@ -8,7 +8,7 @@ module RadiantGo
       
       before(:all) do
         @bundler    = Bundler.new('test')
-        @installer  = Main.new('test', false)
+        @installer  = Main.new('test')
         Dir.mkdir 'test'
         
       end

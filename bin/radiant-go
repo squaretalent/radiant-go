@@ -9,7 +9,6 @@ else
   
   config    = (ARGV[0] == '-c' || ARGV[0] == '--create-config')     ? true : false
   usage     = ARGV.any? {|arg| arg == '-h' || arg == '--help'}      ? true : false
-  force     = ARGV.any? {|arg| arg == '-f' || arg == '--force'}     ? true : false
   version   = ARGV.any? {|arg| arg == '-v' || arg == '--version'}   ? true : false
   
   if config == true
@@ -19,7 +18,7 @@ else
     else
     
     name      = ARGV[1]  
-    installer = RadiantGo::Installers::Main.new(name, false)
+    installer = RadiantGo::Installers::Main.new(name)
     installer.create_config
 
     end
@@ -30,7 +29,7 @@ else
     puts RadiantGo::Main.version
   else
     name      = ARGV.shift
-    installer = RadiantGo::Installers::Main.new(name, force)
+    installer = RadiantGo::Installers::Main.new(name)
     installer.run()
   end
   

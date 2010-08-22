@@ -4,17 +4,16 @@ module RadiantGo
 
     class Main
   
-      def initialize(name, force = false)    
+      def initialize(name)    
       
         @project_name             = name
-        @force                    = force
         Config.gemfile_location   = File.expand_path(File.dirname(__FILE__)) + '/../../../config/Gemfile'
       
       end
   
       def run
     
-        radiant = Installers::Radiant.new(@project_name, Config.database, @force)
+        radiant = Installers::Radiant.new(@project_name, Config.database)
         bundler = Installers::Bundler.new(@project_name)
         
         puts '== generating radiant project'
@@ -36,8 +35,8 @@ module RadiantGo
 
       def copy_gemfile(name)
       
-        # we only copy the file if it doesn't exist or if force is on!
-        if !File.exists?(name + '/Gemfile') || @force == true
+        # we only copy the file if it doesn't exist
+        if !File.exists?(name + '/Gemfile')
           File.new(name + '/Gemfile', File::CREAT) unless File.exists?(name + '/Gemfile')
 
           source = File.open(Config.gemfile_location, 'r')

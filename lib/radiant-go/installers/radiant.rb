@@ -4,18 +4,13 @@ module RadiantGo
     
     class Radiant
          
-      def initialize(name, database, force)
+      def initialize(name, database)
         @name     = name
         @database = database
-        @force    = force
       end
       
       def create
-        if @force
-          %x[radiant #{@name} --force --database=#{@database}]
-        else
           %x[radiant #{@name} --skip --database=#{@database}]
-        end
       end
       
       def bootstrap

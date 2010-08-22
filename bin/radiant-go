@@ -4,14 +4,17 @@ current_dir = File.expand_path(File.dirname(__FILE__))
 require current_dir + '/../lib/radiant-go'
 
 if ARGV.size == 0
-  puts 'please specify a project name' 
+  puts 'please specify a project name or run radiant-go --help for usage' 
 else
   
+  usage   = ARGV.any? {|arg| arg == '-h' || arg == '--help'}    ? true : false
   force   = ARGV.any? {|arg| arg == '-f' || arg == '--force'}   ? true : false
   version = ARGV.any? {|arg| arg == '-v' || arg == '--version'} ? true : false
   name    = ARGV.shift
-
-  if version == true
+  
+  if usage == true
+    puts RadiantGo::Main.usage
+  elsif version == true
     puts RadiantGo::Main.version
   else
     installer = RadiantGo::Installers::Main.new(name, force)

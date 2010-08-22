@@ -29,7 +29,7 @@ module RadiantGo
         puts '== generating radiant project'
         radiant.create
         puts '== copying gemfile'
-        copy_gemfile(@project_name)
+        copy_gemfile
         puts '== bundler is installing gems'
         bundler.install
         puts '== running bootstrap'
@@ -61,29 +61,31 @@ module RadiantGo
       
       def generate_config
         
-       if !File.exists? @project_name
+        puts '== creating config'
+        
+        if !File.exists? @project_name
          # create our directory if there isn't one
          Dir.mkdir @project_name
-       end
-       
-       if !File.exists? @project_name + '/config'
+        end
+
+        if !File.exists? @project_name + '/config'
          # create our config directory if it doesn't already exist!
          Dir.mkdir @project_name + '/config'
-       end
-         
-       # copy our gemfile
-       source = File.open(File.expand_path(File.dirname(__FILE__)) + '/../../../config/Gemfile')
-       target = File.open(@project_name + '/Gemfile', 'w')  
-       target.write( source.read(64) ) while not source.eof?
-       target.close
-       source.close
-       
-       # copy our config file
-       source = File.open(File.expand_path(File.dirname(__FILE__)) + '/../../../config/config.rb')
-       target = File.open(@project_name + '/config/radiant-go.rb', 'w')  
-       target.write( source.read(64) ) while not source.eof?
-       target.close
-       source.close
+        end
+ 
+        # copy our gemfile
+        source = File.open(File.expand_path(File.dirname(__FILE__)) + '/../../../config/Gemfile')
+        target = File.open(@project_name + '/Gemfile', 'w')  
+        target.write( source.read(64) ) while not source.eof?
+        target.close
+        source.close
+
+        # copy our config file
+        source = File.open(File.expand_path(File.dirname(__FILE__)) + '/../../../config/config.rb')
+        target = File.open(@project_name + '/config/radiant-go.rb', 'w')  
+        target.write( source.read(64) ) while not source.eof?
+        target.close
+        source.close
          
       end
 

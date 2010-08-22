@@ -52,19 +52,20 @@ module RadiantGo
       
       def self.all_extensions
         
-        current_dir = File.expand_path(File.dirname(__FILE__))
         extensions  = []
-        gems        = ::Bundler::Definition.from_gemfile(current_dir + '/../Gemfile').dependencies
+        current_dir = File.expand_path(File.dirname(__FILE__))
+        gemfile     = File.open(current_dir + '/../Gemfile', 'r')
 
-        gems.each do |gem|
-          
-          # we only want radiant extensions
-          if gem.name =~ /^radiant-.*-extension$/
-            extensions.push(gem)
+        while(line = gemfile.gets)
+          if extension = line.match(/gem.*(radiant-.*-extension).*['"](.*)['"]/)
+            extensions.push(:name => extension[1], :requirement => extension[2])
           end
-          
-        end
+            
+        end    
+
+        gemfile.close
         extensions
+        
       end
 
     end
@@ -72,3 +73,6 @@ module RadiantGo
   end
 
 end
+
+
+

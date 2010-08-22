@@ -49,32 +49,32 @@ module RadiantGo
 
       end
       
-      def create_config
+      def generate_config
         
-       if File.exists?(@project_name)
-         puts 'cannot create config, directory ' + @project_name + ' already exists!'
-       else
-         
-         # create our directory and a config directory inside it
+       if !File.exists? @project_name
+         # create our directory if there isn't one
          Dir.mkdir @project_name
-         Dir.mkdir @project_name + '/config'
-         
-         # copy our gemfile
-         source = File.open(File.expand_path(File.dirname(__FILE__)) + '/../../../config/Gemfile')
-         target = File.open(@project_name + '/Gemfile', 'w')  
-         target.write( source.read(64) ) while not source.eof?
-         target.close
-         source.close
-         
-         # copy our config file
-         source = File.open(File.expand_path(File.dirname(__FILE__)) + '/../../../config/config.rb')
-         target = File.open(@project_name + '/config/radiant-go.rb', 'w')  
-         target.write( source.read(64) ) while not source.eof?
-         target.close
-         source.close
-         
        end
-        
+       
+       if !File.exists? @project_name + '/config'
+         # create our config directory if it doesn't already exist!
+         Dir.mkdir @project_name + '/config'
+       end
+         
+       # copy our gemfile
+       source = File.open(File.expand_path(File.dirname(__FILE__)) + '/../../../config/Gemfile')
+       target = File.open(@project_name + '/Gemfile', 'w')  
+       target.write( source.read(64) ) while not source.eof?
+       target.close
+       source.close
+       
+       # copy our config file
+       source = File.open(File.expand_path(File.dirname(__FILE__)) + '/../../../config/config.rb')
+       target = File.open(@project_name + '/config/radiant-go.rb', 'w')  
+       target.write( source.read(64) ) while not source.eof?
+       target.close
+       source.close
+         
       end
       
       def self.all_extensions

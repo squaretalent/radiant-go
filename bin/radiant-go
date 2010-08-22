@@ -19,7 +19,7 @@ else
     
     name      = ARGV[1]  
     installer = RadiantGo::Installers::Main.new(name)
-    installer.create_config
+    installer.generate_config
 
     end
     

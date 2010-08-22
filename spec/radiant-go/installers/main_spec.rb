@@ -33,7 +33,7 @@ module RadiantGo
         File.zero?('test/Gemfile').should_not be true
       end
       
-      it 'should not write over an existing gemfile when force is off' do
+      it 'should not write over an existing gemfile' do
         
         # we create a new gemfile and make it blank
         gemfile = File.new('test/Gemfile', File::CREAT)
@@ -44,6 +44,12 @@ module RadiantGo
         @main.copy_gemfile('test')
         File.exists?('test/Gemfile').should be true
         File.size('test/Gemfile').should be 0
+      end
+      
+      it 'should create a Gemfile and config file on generate config' do
+        @main.generate_config
+        File.exists?('test/Gemfile').should be true
+        File.exists?('test/config/radiant-go.rb').should be true
       end
             
     end

@@ -19,7 +19,7 @@ module RadiantGo
         File.directory?('test').should be true
       end
 
-      it 'should not write over existing project files when force is off' do
+      it 'should not write over existing project files' do
         
         # make the README file blank (could be any radiant file instead of README)
         File.delete 'test/README'

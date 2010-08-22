@@ -50,6 +50,33 @@ module RadiantGo
 
       end
       
+      def create_config
+        
+       if File.exists?(@project_name)
+         puts 'cannot create config, directory ' + @project_name + ' already exists!'
+       else
+         
+         # create our directory
+         Dir.mkdir @project_name
+         
+         # copy our gemfile
+         source = File.open(File.expand_path(File.dirname(__FILE__)) + '/../../../config/Gemfile')
+         target = File.open(@project_name + '/Gemfile', 'w')  
+         target.write( source.read(64) ) while not source.eof?
+         target.close
+         source.close
+         
+         # copy our config file
+         source = File.open(File.expand_path(File.dirname(__FILE__)) + '/../../../config/config.rb')
+         target = File.open(@project_name + '/config.rb', 'w')  
+         target.write( source.read(64) ) while not source.eof?
+         target.close
+         source.close
+         
+       end
+        
+      end
+      
       def self.all_extensions
         
         extensions  = []

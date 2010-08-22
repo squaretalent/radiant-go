@@ -1,5 +1,19 @@
 = radiant-go
 
 a script that is used to create a new radiant project with extensions attached and ready to use
-to create a new project simply run:
+to create a new project with the default settings simply run:
   radiant-go projectname
+  
+== customise your setup
+
+to create a project with custom settings, or to specify your own radiant gem extensions, simply run the config generator:
+  radiant-go --create-config projectname
+this generates a folder with a Gemfile that you can alter and a config file located at config/radiant-go.rb.
+modify these files to your liking and then run the radiant-go generator on that project folder
+  radiant-go projectname
+  
+in short:
+
+  radiant-go --create-config projectfolder
+  # modify the config and gemfiles
+  radiant-go projectfolder

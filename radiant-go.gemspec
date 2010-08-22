@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{radiant-go}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["mariovisic"]
@@ -31,6 +31,7 @@ Gem::Specification.new do |s|
      "lib/radiant-go/installers/main.rb",
      "lib/radiant-go/installers/radiant.rb",
      "radiant-go.gemspec",
+     "spec/radiant-go/installers/bundler_spec.rb",
      "spec/radiant-go/installers/main_spec.rb",
      "spec/radiant-go/installers/radiant_spec.rb",
      "spec/rcov.opts",
@@ -43,7 +44,8 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{a quicker and easier way to setup radiant projects}
   s.test_files = [
-    "spec/radiant-go/installers/main_spec.rb",
+    "spec/radiant-go/installers/bundler_spec.rb",
+     "spec/radiant-go/installers/main_spec.rb",
      "spec/radiant-go/installers/radiant_spec.rb",
      "spec/spec_helper.rb"
   ]

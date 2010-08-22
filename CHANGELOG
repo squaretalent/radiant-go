@@ -1,0 +1,11 @@
+== Change Log
+
+=== Edge
+
+
+=== 0.1.1 (August 22, 2010)
+
+* Fixed a bug that caused incompatibility with newer bundler versions [Dirk Kelly, Mario Visic]
+
+=== 0.1.0 (August 20, 2010)
+* Initial Release [Mario Visic]

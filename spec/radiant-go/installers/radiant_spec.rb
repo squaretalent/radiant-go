@@ -43,6 +43,27 @@ module RadiantGo
         
       end
       
+      it 'shouldnt bootstrap if a database file already exists' do
+        File.exists?('test/db/development.' + Config.database + '.db').should be true
+        File.size('test/db/development.' + Config.database + '.db').should be > 0
+        
+        # we remove our database
+        File.delete('test/db/development.' + Config.database + '.db')
+        
+        # and replace it with a blank file
+        database = File.new('test/db/development.' + Config.database + '.db', File::CREAT)
+        database.close
+        
+        # bootstap shouldn't touch the db now!
+        @installer.bootstrap
+        File.size('test/db/development.' + Config.database + '.db').should be 0
+        
+        # cleanup (need a working DB for later tests)
+        File.delete('test/db/development.' + Config.database + '.db')
+        @installer.bootstrap
+        
+      end
+      
       it 'should alter the configuration in the environment file' do
         
         # the size of the file should increase after it is altered

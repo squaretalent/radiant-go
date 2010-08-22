@@ -56,8 +56,9 @@ module RadiantGo
          puts 'cannot create config, directory ' + @project_name + ' already exists!'
        else
          
-         # create our directory
+         # create our directory and a config directory inside it
          Dir.mkdir @project_name
+         Dir.mkdir @project_name + '/config'
          
          # copy our gemfile
          source = File.open(File.expand_path(File.dirname(__FILE__)) + '/../../../config/Gemfile')
@@ -68,7 +69,7 @@ module RadiantGo
          
          # copy our config file
          source = File.open(File.expand_path(File.dirname(__FILE__)) + '/../../../config/config.rb')
-         target = File.open(@project_name + '/config.rb', 'w')  
+         target = File.open(@project_name + '/config/radiant-go.rb', 'w')  
          target.write( source.read(64) ) while not source.eof?
          target.close
          source.close

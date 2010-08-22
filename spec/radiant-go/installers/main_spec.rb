@@ -24,12 +24,12 @@ module RadiantGo
       end
       
       it 'should create a copy of the gemfile' do
-        @main.copy_gemfile('test')
+        @main.copy_gemfile
         File.exists?('test/Gemfile').should be true
       end
       
       it 'should have a gemfile that isn\'t empty' do
-        @main.copy_gemfile('test')
+        @main.copy_gemfile
         File.zero?('test/Gemfile').should_not be true
       end
       
@@ -41,7 +41,7 @@ module RadiantGo
         File.size('test/Gemfile').should be 0
         
         # we run the copy gemfile method, it shouldn't work as the file already exists
-        @main.copy_gemfile('test')
+        @main.copy_gemfile
         File.exists?('test/Gemfile').should be true
         File.size('test/Gemfile').should be 0
       end

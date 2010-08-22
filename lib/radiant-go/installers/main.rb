@@ -33,14 +33,14 @@ module RadiantGo
           
       end
 
-      def copy_gemfile(name)
+      def copy_gemfile
       
         # we only copy the file if it doesn't exist
-        if !File.exists?(name + '/Gemfile')
-          File.new(name + '/Gemfile', File::CREAT) unless File.exists?(name + '/Gemfile')
+        if !File.exists?(@project_name + '/Gemfile')
+          File.new(@project_name + '/Gemfile', File::CREAT) unless File.exists?(@project_name + '/Gemfile')
 
           source = File.open(Config.gemfile_location, 'r')
-          target = File.open(name + '/Gemfile', 'w')
+          target = File.open(@project_name + '/Gemfile', 'w')
 
           target.write( source.read(64) ) while not source.eof?
           target.close
@@ -78,6 +78,11 @@ module RadiantGo
       end
       
       def self.all_extensions
+        
+        # use our default location if no gemfile is specified
+        if Config.gemfile_location.nil?
+          Config.gemfile_location = File.expand_path(File.dirname(__FILE__)) + '/../../../config/Gemfile' 
+        end
         
         extensions  = []
         gemfile     = File.open(Config.gemfile_location, 'r')

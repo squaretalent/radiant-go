@@ -15,14 +15,6 @@ module RadiantGo
         FileUtils.rm_rf 'test'
       end
       
-      it 'should be able to return an array of extensions required' do
-        Main.all_extensions.kind_of?(Array).should be true
-      end
-      
-      it 'should list at least one extension' do
-        Main.all_extensions.size.should be > 0
-      end
-      
       it 'should create a copy of the gemfile' do
         @main.copy_gemfile
         File.exists?('test/Gemfile').should be true

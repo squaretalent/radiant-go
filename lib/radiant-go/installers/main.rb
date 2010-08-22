@@ -6,8 +6,18 @@ module RadiantGo
   
       def initialize(name)    
       
-        @project_name             = name
-        Config.gemfile_location   = File.expand_path(File.dirname(__FILE__)) + '/../../../config/Gemfile'
+        @project_name = name
+                
+        if File.exists? @project_name + '/config/radiant-go.rb'
+          require @project_name + '/config/radiant-go.rb'
+        end
+        
+        # setup default gemfile location
+        if File.exists?(@project_name + '/Gemfile')
+          Config.gemfile_location = @project_name + '/Gemfile'
+        else
+          Config.gemfile_location = File.expand_path(File.dirname(__FILE__)) + '/../../../config/Gemfile' 
+        end
       
       end
   
@@ -75,28 +85,6 @@ module RadiantGo
        target.close
        source.close
          
-      end
-      
-      def self.all_extensions
-        
-        # use our default location if no gemfile is specified
-        if Config.gemfile_location.nil?
-          Config.gemfile_location = File.expand_path(File.dirname(__FILE__)) + '/../../../config/Gemfile' 
-        end
-        
-        extensions  = []
-        gemfile     = File.open(Config.gemfile_location, 'r')
-
-        while(line = gemfile.gets)
-          if extension = line.match(/gem.*(radiant-.*-extension).*['"](.*)['"]/)
-            extensions.push(:name => extension[1], :requirement => extension[2])
-          end
-            
-        end    
-
-        gemfile.close
-        extensions
-        
       end
 
     end

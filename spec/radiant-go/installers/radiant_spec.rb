@@ -7,6 +7,7 @@ module RadiantGo
     describe Radiant do
       
       before(:all) do
+        @main      = Main.new('test')
         @installer = Radiant.new('test', Config.database)
       end
       

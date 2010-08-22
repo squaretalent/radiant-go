@@ -35,7 +35,7 @@ module RadiantGo
           end
             
           # loop through all our radiant extensions and add the lines we need for config
-          Main.all_extensions.each do |gem|
+          all_extensions.each do |gem|
             config_string += "  config.gem '#{gem[:name]}', :version => '#{gem[:requirement]}', :lib => false\n"
           end
           
@@ -66,7 +66,7 @@ module RadiantGo
       def migrate_extensions
         
         Dir.chdir(@name) do
-          Main.all_extensions.each do |gem|
+          all_extensions.each do |gem|
             # we need to use the short name for our migration, eg forms instead of radiant-forms-extension
             extension = gem[:name].scan(/^radiant-(.*)-extension$/)
             %x[rake radiant:extensions:#{extension}:migrate]
@@ -74,6 +74,25 @@ module RadiantGo
         end
         
       end
+      
+      private
+      
+        def all_extensions
+        
+          extensions  = []
+          gemfile     = File.open(Config.gemfile_location, 'r')
+
+          while(line = gemfile.gets)
+            if extension = line.match(/gem.*(radiant-.*-extension).*['"](.*)['"]/)
+              extensions.push(:name => extension[1], :requirement => extension[2])
+            end
+            
+          end    
+
+          gemfile.close
+          extensions
+        
+        end
       
     end
     

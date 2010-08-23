@@ -14,7 +14,7 @@ module RadiantGo
         
         # setup default gemfile location
         if File.exists?(@project_name + '/Gemfile')
-          Config.gemfile_location = @project_name + '/Gemfile'
+          Config.gemfile_location = File.expand_path(@project_name) + '/Gemfile'
         else
           Config.gemfile_location = File.expand_path(File.dirname(__FILE__)) + '/../../../config/Gemfile' 
         end

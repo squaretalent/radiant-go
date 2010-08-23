@@ -1,5 +1,9 @@
 == Change Log
 
+=== 0.1.6 (August 24, 2010)
+
+* Fixed a bug that caused problems locating the Gemfile [Josh French, Mario Visic]
+
 === 0.1.5 (August 24, 2010)
 
 * Altered the version grabbing of gems to be more thorough and precise [Mario Visic]

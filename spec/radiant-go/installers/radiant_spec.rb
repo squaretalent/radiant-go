@@ -91,19 +91,22 @@ module RadiantGo
         
       end
       
-      it 'should not create mutiple config.gem lines in the environment file' do
+      it 'should not create mutiple config.gem lines in the environment file when run more than once' do
+        
         @installer.update_config
         @installer.update_config
         
         required_gems = []
         environment   = File.open 'test/config/environment.rb' 
         
+        # get a list of the gems in the config
         while (line = environment.gets)
           if gem = line.match(/config.gem\s*['"](.*?)['"]/)
             required_gems <<  gem[1]
           end
         end
         
+        # and check for duplicates
         required_gems.eql?(required_gems.uniq).should be true
       
       end

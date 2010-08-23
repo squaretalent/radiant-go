@@ -27,19 +27,33 @@ module RadiantGo
         Dir.chdir(@name) do
         
           # open our config
-          config_file   = File.open('config/environment.rb', 'r')
-          config_string = ''
+          config_file         = File.open 'config/environment.rb'
+          current_gems        = []
+          
+          # get a list of the gems in the config
+          while (line = config_file.gets)
+            if gem = line.match(/config.gem\s*['"](.*?)['"]/)
+              current_gems <<  gem[1]
+            end
+          end
+          
+          # go back to the beginning of our environment file and blank out our strings
+          config_file.rewind
           line          = ''
+          config_string = ''
           
           # read up to the part where we are loading gems
           while(line.index('config.gem') == nil)
             line          = config_file.gets
             config_string += line
           end
-            
+                
           # loop through all our radiant extensions and add the lines we need for config
           all_extensions.each do |gem|
-            config_string += "  config.gem '#{gem[:name]}', :version => '#{gem[:requirement]}', :lib => false\n"
+            # we only add the gem to our config if it's not already there!
+            if !current_gems.any? {|current_gem| current_gem == gem[:name]}
+              config_string += "  config.gem '#{gem[:name]}', :version => '#{gem[:requirement]}', :lib => false\n"
+            end
           end
           
           # read the rest of the config 

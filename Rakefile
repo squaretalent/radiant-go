@@ -11,7 +11,7 @@ begin
     gem.description = 'a quick an easy way to create radiant projects that are ready to use straight away, automatically perform bootstraps, migrations and updates for radiant and extensions, radiant-go is completely customizable little orphan awesome'
     gem.email = 'mario@mariovisic.com'
     gem.homepage = 'http://github.com/squaretalent/radiant-go'
-    gem.authors = ['mariovisic']
+    gem.authors = ['squaretalent']
     gem.add_dependency('radiant', '>= 0.9.1')
     gem.add_dependency('bundler', '>= 0.9.26')
   end

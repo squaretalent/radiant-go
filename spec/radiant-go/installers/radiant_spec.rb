@@ -7,7 +7,8 @@ module RadiantGo
     describe Radiant do
       
       before(:all) do
-        @installer = Radiant.new('test', Config.database, false)
+        @main      = Main.new('test')
+        @installer = Radiant.new('test', Config.database)
       end
       
       after(:all) do
@@ -19,7 +20,7 @@ module RadiantGo
         File.directory?('test').should be true
       end
 
-      it 'should not write over existing project files when force is off' do
+      it 'should not write over existing project files' do
         
         # make the README file blank (could be any radiant file instead of README)
         File.delete 'test/README'
@@ -33,29 +34,33 @@ module RadiantGo
         
       end
       
-      it 'should write over existing project files when force is on' do
-        
-        # turn force on
-        @installer = Radiant.new('test', Config.database, true)
-        
-        # make the README blank (could be any radiant file instead of README)
-        File.delete 'test/README'
-        readme = File.new('test/README', File::CREAT)
-        readme.close
-        File.size('test/README').should be 0
-        
-        # it should ovveride
-        @installer.create
-        File.size('test/README').should be > 0
-        
-      end
-      
       it 'should create a non empty database file upon bootstrap' do
         
         File.exists?('test/db/development.' + Config.database + '.db').should be false
         @installer.bootstrap
         File.exists?('test/db/development.' + Config.database + '.db').should be true
         File.size('test/db/development.' + Config.database + '.db').should be > 0
+        
+      end
+      
+      it 'shouldnt bootstrap if a database file already exists' do
+        File.exists?('test/db/development.' + Config.database + '.db').should be true
+        File.size('test/db/development.' + Config.database + '.db').should be > 0
+        
+        # we remove our database
+        File.delete('test/db/development.' + Config.database + '.db')
+        
+        # and replace it with a blank file
+        database = File.new('test/db/development.' + Config.database + '.db', File::CREAT)
+        database.close
+        
+        # bootstap shouldn't touch the db now!
+        @installer.bootstrap
+        File.size('test/db/development.' + Config.database + '.db').should be 0
+        
+        # cleanup (need a working DB for later tests)
+        File.delete('test/db/development.' + Config.database + '.db')
+        @installer.bootstrap
         
       end
       

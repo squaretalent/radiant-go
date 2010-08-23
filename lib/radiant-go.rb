@@ -17,6 +17,10 @@ module RadiantGo
     def self.version
       File.read(File.expand_path(File.dirname(__FILE__)) + '/../VERSION')
     end
+    
+    def self.usage
+      File.read(File.expand_path(File.dirname(__FILE__)) + '/../USAGE')
+    end
 
   end
   

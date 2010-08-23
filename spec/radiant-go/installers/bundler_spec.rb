@@ -8,7 +8,7 @@ module RadiantGo
       
       before(:all) do
         @bundler    = Bundler.new('test')
-        @installer  = Main.new('test', false)
+        @installer  = Main.new('test')
         Dir.mkdir 'test'
         
       end
@@ -21,7 +21,7 @@ module RadiantGo
         
         # we shouldn't have a .bundle folder
         File.directory?('test/.bundle').should be false
-        @installer.copy_gemfile('test')
+        @installer.copy_gemfile
         @bundler.install
         
         # after running bundler we should have our .bundle directory

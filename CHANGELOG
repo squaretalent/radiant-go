@@ -1,7 +1,14 @@
 == Change Log
 
-=== Edge
 
+=== 0.1.4 (August 23, 2010)
+
+* Fixed a bug with running bootstrap multiple times on the same project [Mario Visic]
+
+=== 0.1.2 (August 23, 2010)
+
+* Created a generator for config files [Mario Visic]
+* Generator uses a local Gemfile and config if available [Mario Visic]
 
 === 0.1.1 (August 22, 2010)
 

@@ -90,6 +90,23 @@ module RadiantGo
         File.size('test/db/development.' + Config.database + '.db').should be > size
         
       end
+      
+      it 'should not create mutiple config.gem lines in the environment file' do
+        @installer.update_config
+        @installer.update_config
+        
+        required_gems = []
+        environment   = File.open 'test/config/environment.rb' 
+        
+        while (line = environment.gets)
+          if gem = line.match(/config.gem\s*['"](.*?)['"]/)
+            required_gems <<  gem[1]
+          end
+        end
+        
+        required_gems.eql?(required_gems.uniq).should be true
+      
+      end
 
     end
     

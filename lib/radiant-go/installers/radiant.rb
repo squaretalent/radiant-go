@@ -86,7 +86,7 @@ module RadiantGo
           gemfile     = File.open(Config.gemfile_location, 'r')
 
           while(line = gemfile.gets)
-            if extension = line.match(/gem.*(radiant-.*-extension).*['"](.*)['"]/)
+            if extension = line.match(/gem.*(radiant-.*-extension).*['"]\s*((=|>=|>|<|<=|~>)?\s*[\d.rc]*)\s*['"]/)
               extensions.push(:name => extension[1], :requirement => extension[2])
             end
             

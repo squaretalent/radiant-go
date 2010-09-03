@@ -45,3 +45,7 @@ there is none unfortunately. radiant-go runs external generators and POSIX comma
 ## vendored extensions
 
 currently radiant-go only supports extensions as gems. this is on purpose, all radiant extensions should be moved to gems, it's a much nicer and easier way to deal with them. See this screencast for more information on gem extensions http://radiantcms.org/blog/archives/2010/07/01/radiantcasts-episode-18-extensions-as-gems/
+
+## license
+
+radiant-go is licensed under the MIT standard license. see LICENSE for further information.

@@ -22,7 +22,7 @@ module RadiantGo
       def bootstrap
         # copy our gemfile
         source = File.open(File.expand_path(File.dirname(__FILE__)) + '/../../../db/templates/site.yml')
-        target = File.open('/db/templates/site.yml', 'w')  
+        target = File.open('db/templates/site.yml', 'w')  
         target.write( source.read(64) ) while not source.eof?
         target.close
         source.close

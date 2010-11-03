@@ -30,9 +30,9 @@ module RadiantGo
         radiant.create
         puts '== copying gemfile'
         copy_gemfile
-        puts '== bundler is installing gems'
+        puts '== installing gems'
         bundler.install
-        puts '== updating config'
+        puts '== updating environment'
         radiant.update_config
         puts '== updating extensions'
         radiant.update_extensions

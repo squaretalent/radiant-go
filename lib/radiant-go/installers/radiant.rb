@@ -10,7 +10,7 @@ module RadiantGo
       end
       
       def create
-          %x[radiant #{@name} --skip --database=#{@database}]
+        %x[radiant #{@name} --skip --database=#{@database}]
       end
       
       def migrate
@@ -20,7 +20,13 @@ module RadiantGo
       end
       
       def bootstrap
-        # we only bootstrap if there's no database!
+        # copy our gemfile
+        source = File.open(File.expand_path(File.dirname(__FILE__)) + '/../../../db/templates/site.yml')
+        target = File.open(@project_name + '/db/templates/site.yml', 'w')  
+        target.write( source.read(64) ) while not source.eof?
+        target.close
+        source.close
+        
         Dir.chdir(@name) do
           %x[rake db:bootstrap ADMIN_NAME=#{Config.admin_name} ADMIN_USERNAME=#{Config.admin_user} ADMIN_PASSWORD=#{Config.admin_pass} DATABASE_TEMPLATE=#{Config.database_template}]
         end

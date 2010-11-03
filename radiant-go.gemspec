@@ -29,6 +29,7 @@ Gem::Specification.new do |s|
      "bin/radiant-go",
      "config/Gemfile",
      "config/config.rb",
+     "db/templates/site.yml",
      "lib/radiant-go.rb",
      "lib/radiant-go/config.rb",
      "lib/radiant-go/installers/bundler.rb",

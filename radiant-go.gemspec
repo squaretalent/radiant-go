@@ -5,22 +5,24 @@
 
 Gem::Specification.new do |s|
   s.name = %q{radiant-go}
-  s.version = "0.1.6"
+  s.version = "0.1.7"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["squaretalent"]
-  s.date = %q{2010-08-24}
+  s.date = %q{2010-11-03}
   s.default_executable = %q{radiant-go}
   s.description = %q{a quick an easy way to create radiant projects that are ready to use straight away, automatically perform bootstraps, migrations and updates for radiant and extensions, radiant-go is completely customizable little orphan awesome}
   s.email = %q{mario@mariovisic.com}
   s.executables = ["radiant-go"]
   s.extra_rdoc_files = [
-    "README.rdoc"
+    "LICENSE",
+     "README.md"
   ]
   s.files = [
     ".gitignore",
      "CHANGELOG",
-     "README.rdoc",
+     "LICENSE",
+     "README.md",
      "Rakefile",
      "USAGE",
      "VERSION",

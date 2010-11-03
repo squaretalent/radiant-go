@@ -32,14 +32,14 @@ module RadiantGo
         copy_gemfile
         puts '== bundler is installing gems'
         bundler.install
-        puts '== running bootstrap'
-        radiant.bootstrap
         puts '== updating config'
         radiant.update_config
         puts '== updating extensions'
         radiant.update_extensions
         puts '== migrating extensions'
         radiant.migrate_extensions
+        puts '== running bootstrap'
+        radiant.bootstrap
           
       end
 

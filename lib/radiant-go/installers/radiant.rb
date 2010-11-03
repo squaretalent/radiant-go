@@ -13,6 +13,12 @@ module RadiantGo
           %x[radiant #{@name} --skip --database=#{@database}]
       end
       
+      def migrate
+        Dir.chdir(@name) do
+          %x[rake db:migrate]
+        end
+      end
+      
       def bootstrap
         # we only bootstrap if there's no database!
         if File.exists?(@name + '/db/development.' + Config.database + '.db') == false

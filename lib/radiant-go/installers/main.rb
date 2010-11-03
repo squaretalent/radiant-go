@@ -36,6 +36,8 @@ module RadiantGo
         radiant.update_config
         puts '== updating extensions'
         radiant.update_extensions
+        puts '== migrating radiant'
+        radiant.migrate
         puts '== migrating extensions'
         radiant.migrate_extensions
         puts '== running bootstrap'

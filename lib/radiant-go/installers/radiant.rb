@@ -27,7 +27,7 @@ module RadiantGo
             FileUtils.mkdir_p("db/templates")
             FileUtils.cp(template, "db/templates/#{Config.database_template}")
           end
-          %x[rake db:bootstrap ADMIN_NAME=#{Config.admin_name} ADMIN_USERNAME=#{Config.admin_user} ADMIN_PASSWORD=#{Config.admin_pass} DATABASE_TEMPLATE=#{Config.database_template}]
+          %x[rake db:bootstrap ADMIN_NAME=#{Config.admin_name} ADMIN_USERNAME=#{Config.admin_user} ADMIN_PASSWORD=#{Config.admin_pass} DATABASE_TEMPLATE=#{Config.database_template} --trace]
         end
       end
       

@@ -20,11 +20,13 @@ module RadiantGo
       end
       
       def bootstrap
-        # copy our site template
-        FileUtils.mkdir("db/templates")
-        FileUtils.cp(File.expand_path("#{File.dirname(__FILE__)}/../../../db/templates/site.yml"), "db/templates/site.yml")
-        
         Dir.chdir(@name) do
+          template = File.expand_path("#{File.dirname(__FILE__)}/../../../db/templates/#{Config.database_template}")
+          if File.exist?(template)
+            # copy our template
+            FileUtils.mkdir_p("db/templates")
+            FileUtils.cp(template, "db/templates/#{Config.database_template}")
+          end
           %x[rake db:bootstrap ADMIN_NAME=#{Config.admin_name} ADMIN_USERNAME=#{Config.admin_user} ADMIN_PASSWORD=#{Config.admin_pass} DATABASE_TEMPLATE=#{Config.database_template}]
         end
       end

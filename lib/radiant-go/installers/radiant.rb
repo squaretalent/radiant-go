@@ -21,10 +21,8 @@ module RadiantGo
       
       def bootstrap
         # we only bootstrap if there's no database!
-        if File.exists?(@name + '/db/development.' + Config.database + '.db') == false
-          Dir.chdir(@name) do
-            %x[rake db:bootstrap OVERWRITE=true ADMIN_NAME=#{Config.admin_name} ADMIN_USERNAME=#{Config.admin_user} ADMIN_PASSWORD=#{Config.admin_pass} DATABASE_TEMPLATE=#{Config.database_template}]
-          end
+        Dir.chdir(@name) do
+          %x[rake db:bootstrap ADMIN_NAME=#{Config.admin_name} ADMIN_USERNAME=#{Config.admin_user} ADMIN_PASSWORD=#{Config.admin_pass} DATABASE_TEMPLATE=#{Config.database_template}]
         end
       end
       

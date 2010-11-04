@@ -31,7 +31,7 @@ module RadiantGo
             FileUtils.mkdir_p("db/templates")
             FileUtils.cp(source, dest)
           end
-          
+          ENV['DATABASE_TEMPLATE'] = dest
           Rake::Task["db:template"].invoke
         end
       end

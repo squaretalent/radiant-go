@@ -23,7 +23,7 @@ module RadiantGo
         Dir.chdir(@name) do
           source = File.expand_path("#{File.dirname(__FILE__)}/../../../db/templates/#{Config.database_template}")
           dest   = "db/templates/#{Config.database_template}"
-          if File.exist?(source) and !File.exist?()
+          if File.exist?(source) and !File.exist?(dest)
             # copy our template
             FileUtils.mkdir_p("db/templates")
             FileUtils.cp(source, dest)

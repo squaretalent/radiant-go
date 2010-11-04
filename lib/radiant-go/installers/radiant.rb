@@ -28,7 +28,7 @@ module RadiantGo
             FileUtils.cp(template, "db/templates/#{Config.database_template}")
           end
           
-          setup = Radaint::Setup.new("db/templates/#{Config.database_template}")
+          setup = Radiant::Setup.new("db/templates/#{Config.database_template}")
             
         end
       end

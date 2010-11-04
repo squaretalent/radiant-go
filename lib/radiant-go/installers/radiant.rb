@@ -28,8 +28,8 @@ module RadiantGo
             FileUtils.mkdir_p("db/templates")
             FileUtils.cp(source, dest)
           end
-          FileUtils.cp("#{File.dirname(__FILE__)}/../../tasks/database.rake", "lib/tasks/database.rake")
-          %x[rake db:template DATABASE_TEMPLATE=#{dest}]
+          FileUtils.cp("#{File.dirname(__FILE__)}/../../tasks/radiant_go_tasks.rake", "lib/tasks/radiant_go_tasks.rake")
+          %x[rake db:template ADMIN_NAME=#{Config.admin_name} ADMIN_USERNAME=#{Config.admin_user} ADMIN_PASSWORD=#{Config.admin_pass} DATABASE_TEMPLATE=#{dest}]
         end
       end
       

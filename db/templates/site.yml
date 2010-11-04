@@ -1,6 +1,22 @@
 name: Radiant Go
 description: A great setup stript
 records: 
+  Users: 
+    1: 
+      updated_by_id: 
+      session_token: 
+      salt: 832f5eb6f973d1f710a48145e6615bf3c56240da
+      name: admin
+      notes: 
+      created_by_id: 
+      lock_version: 0
+      designer: false
+      admin: true
+      id: 1
+      locale: 
+      password: 3c8542dd1a1880d455f6e78cdb7c210a0cd5179a
+      login: admin
+      email: admin@example.com
   Pages: 
     1: 
       class_name: Form

@@ -2,7 +2,7 @@ require 'rake'
 require 'spec/rake/spectask'
 
 unless Rake::Task.task_defined? "db:load_template"
-  Dir["#{RADIANT_ROOT}/lib/tasks/**/*.rake"].sort.each { |ext| load ext }
+  Dir["lib/tasks/**/*.rake"].sort.each { |ext| load ext }
 end
 
 begin

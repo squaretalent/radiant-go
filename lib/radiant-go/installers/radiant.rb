@@ -1,5 +1,5 @@
 require 'rake'
-load '../../../tasks/database.rake'
+load "#{File.dirname(__FILE__)}/../../tasks/database.rake"
 
 module RadiantGo
   

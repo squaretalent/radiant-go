@@ -13,7 +13,6 @@ gem 'rmagick',                      '2.13.1'
 gem 'aws-s3',                       '0.6.2',    :require => 'aws/s3'
 gem 'paperclip',                    '2.3.5',    :require => nil
 gem 'radiant-forms-extension',      '>= 3.2.4', :require => nil
-gem 'radiant-settings-extension',   '>= 1.1.1', :require => nil
 gem 'radiant-images-extension',     '>= 0.4.0', :require => nil
 gem 'radiant-layouts-extension',    '>= 1.0.1', :require => nil
 gem 'radiant-drag-extension',       '>= 0.1.1', :require => nil

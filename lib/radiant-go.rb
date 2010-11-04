@@ -3,7 +3,6 @@
 require 'rubygems'
 require 'fileutils'
 require 'rake'
-load "#{File.dirname(__FILE__)}/tasks/database.rake"
 
 current_dir = File.expand_path(File.dirname(__FILE__))
 

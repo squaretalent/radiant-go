@@ -29,6 +29,7 @@ else
     puts RadiantGo::Main.version
   else
     name      = ARGV.shift
+    RAILS_ROOT = "#{current_dir}/#{name}"
     installer = RadiantGo::Installers::Main.new(name)
     installer.run()
   end

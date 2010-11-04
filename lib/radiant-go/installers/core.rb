@@ -1,3 +1,5 @@
+require 'radiant/setup'
+
 module RadiantGo
   
   module Installers

@@ -2,7 +2,6 @@
 
 require 'rubygems'
 require 'fileutils'
-require 'radiant'
 
 current_dir = File.expand_path(File.dirname(__FILE__))
 

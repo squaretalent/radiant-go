@@ -32,7 +32,7 @@ module RadiantGo
             FileUtils.cp(source, dest)
           end
           
-          Rake::Task['db:template DATABASE_TEMPLATE=#{dest}']
+          Rake::Task['db:template DATABASE_TEMPLATE=#{dest}'].invoke
         end
       end
       

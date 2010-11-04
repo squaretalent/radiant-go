@@ -28,7 +28,8 @@ module RadiantGo
             FileUtils.cp(template, "db/templates/#{Config.database_template}")
           end
           
-          setup = Radiant::Setup.new("db/templates/#{Config.database_template}")
+          setup = ::Radiant::Setup.new
+          setup.load_database_template("db/templates/#{Config.database_template}")
             
         end
       end

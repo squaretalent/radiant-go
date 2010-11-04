@@ -1,2 +1,60 @@
 name: Radiant Go
 description: A great setup stript
+records: 
+  Pages: 
+    1: 
+      class_name: Form
+      slug: /
+      virtual: false
+      title: Home Page
+      breadcrumb: Home
+      lock_version: 16
+      id: 1
+      description: ""
+      status_id: 100
+      layout_id: 
+      parent_id: 
+      keywords: ""
+  PageParts:
+    1: 
+      name: body
+      filter_id: ""
+      page_id: 1
+      id: 1
+      content: |
+        <h1>Home</h1>
+        <r:unless_response>
+          <r:form name="articles" />
+        </r:unless_response>
+        <r:if_response>
+          <h2>Thank you for contacting us <r:get name='contact[name]' /></h2>
+        </r:if_response>
+  Forms: 
+    1: 
+      title: Form
+      body: |
+        <ol>
+          <li class="input">
+            <r:label for='contact[name]'>Name</r:label>
+            <r:text name='contact[name]' />
+          </li>
+          <li class="input">
+            <r:label for='contact[email]'>Email</r:label>
+            <r:text name='contact[email]' />
+          </li>
+          <li class="submit">
+            <r:submit value='Send' />
+          </li>
+        </ol>
+      content: |
+        <h2>Contact from <r:get name='contact[name]' /></h2>
+        
+        <p>You can get back to them on  <r:get name='contact[email]' /></p>
+        
+        <p>Cheers,<br /> <strong>Cool Mailer</strong></p>
+      config: |
+        cool_mailer:
+          extension: mail
+          field:
+            from: contact[email]
+          to: info@example.com

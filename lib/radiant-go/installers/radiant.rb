@@ -1,8 +1,3 @@
-require 'radiant'
-require 'radiant/setup'
-require 'yaml'
-require 'active_support'
-
 module RadiantGo
   
   module Installers
@@ -33,9 +28,7 @@ module RadiantGo
             FileUtils.mkdir_p("db/templates")
             FileUtils.cp(source, dest)
           end
-          
-          setup = ::Radiant::Setup.new
-          setup.load_database_template(dest)
+          %x[rake db:load_template DATABASE_TEMPLATE=#{dest}]
         end
       end
       

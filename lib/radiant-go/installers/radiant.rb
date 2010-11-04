@@ -1,6 +1,3 @@
-require 'rake'
-load "#{File.dirname(__FILE__)}/../../tasks/database.rake"
-
 module RadiantGo
   
   module Installers

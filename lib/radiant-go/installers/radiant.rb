@@ -21,15 +21,16 @@ module RadiantGo
       
       def bootstrap
         Dir.chdir(@name) do
-          template = File.expand_path("#{File.dirname(__FILE__)}/../../../db/templates/#{Config.database_template}")
-          if File.exist?(template)
+          source = File.expand_path("#{File.dirname(__FILE__)}/../../../db/templates/#{Config.database_template}")
+          dest   = "db/templates/#{Config.database_template}"
+          if File.exist?(template) and !File.exist?()
             # copy our template
             FileUtils.mkdir_p("db/templates")
-            FileUtils.cp(template, "db/templates/#{Config.database_template}")
+            FileUtils.cp(template, dest)
           end
           
           setup = ::Radiant::Setup.new
-          setup.load_database_template("db/templates/#{Config.database_template}")
+          setup.load_database_template(dest)
             
         end
       end

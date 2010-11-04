@@ -1,3 +1,4 @@
+require 'radiant'
 require 'radiant/setup'
 
 module RadiantGo
@@ -22,7 +23,6 @@ module RadiantGo
       end
       
       def bootstrap
-        RADIANT_ROOT = @name
         Dir.chdir(@name) do
           source = File.expand_path("#{File.dirname(__FILE__)}/../../../db/templates/#{Config.database_template}")
           dest   = "db/templates/#{Config.database_template}"

@@ -1,5 +1,6 @@
 require 'radiant'
 require 'radiant/setup'
+require 'yaml'
 
 module RadiantGo
   

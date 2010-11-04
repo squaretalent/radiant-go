@@ -1,6 +1,10 @@
 require 'rake'
 require 'spec/rake/spectask'
 
+unless Rake::Task.task_defined? "db:load_template"
+  Dir["#{RADIANT_ROOT}/lib/tasks/**/*.rake"].sort.each { |ext| load ext }
+end
+
 begin
   
   require 'jeweler' # it's here and not up, if jeweler isn't installed, the rescue below will catch (end users don't need it)

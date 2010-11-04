@@ -35,7 +35,6 @@ Gem::Specification.new do |s|
      "lib/radiant-go/installers/bundler.rb",
      "lib/radiant-go/installers/main.rb",
      "lib/radiant-go/installers/radiant.rb",
-     "lib/tasks/database.rake",
      "radiant-go.gemspec",
      "spec/radiant-go/installers/bundler_spec.rb",
      "spec/radiant-go/installers/main_spec.rb",

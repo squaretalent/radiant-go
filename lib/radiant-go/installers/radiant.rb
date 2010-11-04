@@ -1,3 +1,6 @@
+require 'rake'
+load '../../tasks/database.rake'
+
 module RadiantGo
   
   module Installers
@@ -28,7 +31,8 @@ module RadiantGo
             FileUtils.mkdir_p("db/templates")
             FileUtils.cp(source, dest)
           end
-          %x[rake db:load_template DATABASE_TEMPLATE=#{dest}]
+          
+          %x[rake db:template DATABASE_TEMPLATE=#{dest}]
         end
       end
       

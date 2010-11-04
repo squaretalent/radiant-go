@@ -1,14 +1,6 @@
 require 'rake'
 require 'spec/rake/spectask'
 
-namespace :db do
-  desc "Load Template into Radiant."
-  task :load_template => :environment do
-    require 'radiant/setup'
-    Radiant::Setup.load_database_template(ENV['DATABASE_TEMPLATE'])
-  end
-end
-
 begin
   
   require 'jeweler' # it's here and not up, if jeweler isn't installed, the rescue below will catch (end users don't need it)

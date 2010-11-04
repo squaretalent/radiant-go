@@ -29,7 +29,7 @@ module RadiantGo
             FileUtils.cp(source, dest)
           end
           
-          setup = ::Radiant::Setup.new
+          setup = Radiant::Setup.new
           setup.load_database_template(dest)
         end
       end

@@ -33,6 +33,7 @@ Gem::Specification.new do |s|
      "lib/radiant-go.rb",
      "lib/radiant-go/config.rb",
      "lib/radiant-go/installers/bundler.rb",
+     "lib/radiant-go/installers/core.rb",
      "lib/radiant-go/installers/main.rb",
      "radiant-go.gemspec",
      "spec/radiant-go/installers/bundler_spec.rb",

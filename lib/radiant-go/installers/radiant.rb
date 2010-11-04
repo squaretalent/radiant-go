@@ -4,7 +4,7 @@ module RadiantGo
   
   module Installers
     
-    class Core
+    class Radiant
          
       def initialize(name, database)
         @name     = name
@@ -22,6 +22,7 @@ module RadiantGo
       end
       
       def bootstrap
+        RADIANT_ROOT = @name
         Dir.chdir(@name) do
           source = File.expand_path("#{File.dirname(__FILE__)}/../../../db/templates/#{Config.database_template}")
           dest   = "db/templates/#{Config.database_template}"
@@ -31,7 +32,7 @@ module RadiantGo
             FileUtils.cp(source, dest)
           end
           
-          setup = Radiant::Setup.new
+          setup = ::Radiant::Setup.new
           setup.load_database_template(dest)
         end
       end

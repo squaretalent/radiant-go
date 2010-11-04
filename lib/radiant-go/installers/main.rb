@@ -23,7 +23,7 @@ module RadiantGo
   
       def run
     
-        radiant = Installers::Core.new(@project_name, Config.database)
+        radiant = Installers::Radiant.new(@project_name, Config.database)
         bundler = Installers::Bundler.new(@project_name)
         
         puts '== generating radiant project'

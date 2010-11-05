@@ -9,9 +9,9 @@ namespace :radiant do
       task :migrate => :environment do
         require 'radiant/extension_migrator'
         if ENV["VERSION"]
-          RadiantGoExtension.migrator.migrate(ENV["VERSION"].to_i)
+          GoExtension.migrator.migrate(ENV["VERSION"].to_i)
         else
-          RadiantGoExtension.migrator.migrate
+          GoExtension.migrator.migrate
         end
         Rake::Task['db:schema:dump'].invoke
       end
@@ -20,17 +20,17 @@ namespace :radiant do
       task :update => :environment do
         is_svn_or_dir = proc {|path| path =~ /\.svn/ || File.directory?(path) }
         puts "Copying assets from DragExtension"
-        Dir[RadiantGoExtension.root + "/public/**/*"].reject(&is_svn_or_dir).each do |file|
-          path = file.sub(RadiantGoExtension.root, '')
+        Dir[GoExtension.root + "/public/**/*"].reject(&is_svn_or_dir).each do |file|
+          path = file.sub(GoExtension.root, '')
           directory = File.dirname(path)
           mkdir_p RAILS_ROOT + directory, :verbose => false
           cp file, RAILS_ROOT + path, :verbose => false
         end
-        unless RadiantGoExtension.root.starts_with? RAILS_ROOT # don't need to copy vendored tasks
+        unless GoExtension.root.starts_with? RAILS_ROOT # don't need to copy vendored tasks
           puts "Copying rake tasks from DragExtension"
           local_tasks_path = File.join(RAILS_ROOT, %w(lib tasks))
           mkdir_p local_tasks_path, :verbose => false
-          Dir[File.join RadiantGoExtension.root, %w(lib tasks *.rake)].each do |file|
+          Dir[File.join GoExtension.root, %w(lib tasks *.rake)].each do |file|
             cp file, local_tasks_path, :verbose => false
           end
         end
@@ -39,7 +39,7 @@ namespace :radiant do
       desc "Syncs all available translations for this ext to the English ext master"
       task :sync => :environment do
         # The main translation root, basically where English is kept
-        language_root = RadiantGoExtension.root + "/config/locales"
+        language_root = GoExtension.root + "/config/locales"
         words = TranslationSupport.get_translation_keys(language_root)
         
         Dir["#{language_root}/*.yml"].each do |filename|

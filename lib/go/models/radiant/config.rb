@@ -11,11 +11,11 @@ module Go
               if except && except.present?
                 # Returns only the specified models, unless they're not defined
                 models = except.split(',').map { |m| m.pluralize.classify }
-                models = armodels & models
+                models = armodels - models
               elsif only && only.present?
                 # Returns all models except those specified
                 models = only.split(',').map { |m| m.pluralize.classify }
-                models = armodels - models
+                models = armodels & models
               else
                 models = armodels
               end

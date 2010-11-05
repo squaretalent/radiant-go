@@ -6,6 +6,9 @@ class GoExtension < Radiant::Extension
   def activate    
     # Model Includes
     Radiant::Config.send :include, Go::Models::Radiant::Config
+    
+    # Controller Includes
+    Admin::ExportController.send :include, Go::Controllers::Radiant::Config
   end
   
 end

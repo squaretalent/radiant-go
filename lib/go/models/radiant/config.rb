@@ -6,7 +6,6 @@ module Go
         def self.included(base)
           base.class_eval do
             def self.export(only=nil,except=nil)
-              raise ActiveRecord::Base.send(:subclasses).inspect
               armodels = (ActiveRecord::Base.send(:subclasses) - Page.send(:subclasses)).map { |m| m.name }
               
               if only && only.present?

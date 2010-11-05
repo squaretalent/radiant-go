@@ -7,7 +7,7 @@ module Go
           base.class_eval do
             def self.export(only=nil,except=nil)
               armodels = ['Radiant::Config']
-              ignore = ['schema_migrations','extension_meta','sessions','configs']
+              ignore = ['schema_migrations','extension_meta','sessions','config']
               
               armodels += (ActiveRecord::Base.connection.tables).reject{ |m| ignore.include?(m) }
               armodels = armodels.map{ |m| m.pluralize.classify }

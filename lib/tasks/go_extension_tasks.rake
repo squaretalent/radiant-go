@@ -3,7 +3,7 @@ require 'fileutils'
 
 namespace :radiant do
   namespace :extensions do
-    namespace :radiant_go do
+    namespace :go do
       
       desc "Runs the migration of the DragExtension"
       task :migrate => :environment do

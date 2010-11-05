@@ -12,7 +12,7 @@ gem 'compass-960-plugin',           '0.9.13'
 gem 'rmagick',                      '2.13.1'
 gem 'aws-s3',                       '0.6.2',    :require => 'aws/s3'
 gem 'paperclip',                    '2.3.5',    :require => nil
-gem 'radiant-go',                   '0.2.0.beta.1', :require => nil
+gem 'radiant-go-extension'
 gem 'radiant-forms-extension',      '>= 3.2.4', :require => nil
 gem 'radiant-settings-extension',   '>= 1.1.1', :require => nil
 gem 'radiant-images-extension',     '>= 0.4.0', :require => nil

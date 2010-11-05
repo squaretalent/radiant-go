@@ -39,12 +39,12 @@ records:
       id: 1
       content: |
         <h1>Home</h1>
-        <r:unless_response>
-          <r:form name="articles" />
-        </r:unless_response>
-        <r:if_response>
+        <r:response:unless_response >
+          <r:form name="Form" />
+        </r:response:unless_response >
+        <r:response:if_response>
           <h2>Thank you for contacting us <r:get name='contact[name]' /></h2>
-        </r:if_response>
+        </r:response:if_response>
   Forms: 
     1: 
       title: Form

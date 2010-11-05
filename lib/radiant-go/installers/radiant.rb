@@ -1,5 +1,4 @@
 require 'rake'
-load '../../tasks/database.rake'
 
 module RadiantGo
   

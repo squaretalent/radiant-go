@@ -22,11 +22,13 @@ module Go
               
               klasses = models.map { |m| m.constantize }              
               
-              hash = { 'name' => 'name me', 'description' => 'optional', 'records' => {} }
+              records = {}
               klasses.each do |klass|
-                hash['records'][klass.name.pluralize] = klass.find(:all).inject({}) { |h, record| h[record.id.to_i] = record.attributes; h }
+                records[klass.name.pluralize] = klass.find(:all).inject({}) { |h, record| h[record.id.to_i] = record.attributes; h }
               end
-              hash.to_yaml
+              
+              description = { 'name' => 'name me', 'description' => 'optional' }
+              description.to_yaml + { 'records' => records}.to_yaml
             end
           end
         end

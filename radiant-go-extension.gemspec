@@ -4,7 +4,7 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{radiant-go}
+  s.name = %q{radiant-go-extension}
   s.version = "0.2.0.beta.1"
 
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
@@ -19,7 +19,8 @@ Gem::Specification.new do |s|
      "README.md"
   ]
   s.files = [
-    ".gitignore",
+    ".DS_Store",
+     ".gitignore",
      "CHANGELOG",
      "LICENSE",
      "README.md",
@@ -30,16 +31,17 @@ Gem::Specification.new do |s|
      "config/Gemfile",
      "config/config.rb",
      "db/templates/radiant-go.yml",
+     "go_extension.rb",
+     "lib/.DS_Store",
+     "lib/go/controllers/admin/export.rb",
+     "lib/go/models/radiant/config.rb",
      "lib/radiant-go.rb",
      "lib/radiant-go/config.rb",
-     "lib/radiant-go/controllers/admin/export.rb",
      "lib/radiant-go/installers/bundler.rb",
      "lib/radiant-go/installers/main.rb",
      "lib/radiant-go/installers/radiant.rb",
-     "lib/radiant-go/models/radiant/config.rb",
-     "lib/tasks/radiant_go_tasks.rake",
+     "lib/tasks/go_extension_tasks.rake",
      "radiant-go.gemspec",
-     "radiant_go_extension.rb",
      "spec/radiant-go/installers/bundler_spec.rb",
      "spec/radiant-go/installers/main_spec.rb",
      "spec/radiant-go/installers/radiant_spec.rb",
@@ -47,7 +49,7 @@ Gem::Specification.new do |s|
      "spec/spec.opts",
      "spec/spec_helper.rb"
   ]
-  s.homepage = %q{http://github.com/squaretalent/radiant-go}
+  s.homepage = %q{http://github.com/mariovisic/radiant-go-extension}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}

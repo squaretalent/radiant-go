@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{radiant-go}
-  s.version = "0.2.0"
+  s.version = "0.2.0.beta.1"
 
-  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
+  s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mario Visic", "Dirk Kelly"]
-  s.date = %q{2010-11-04}
+  s.date = %q{2010-11-05}
   s.default_executable = %q{radiant-go}
   s.description = %q{a quick an easy way to create radiant projects that are ready to use straight away, automatically perform bootstraps, migrations and updates for radiant and extensions, radiant-go is completely customizable little orphan awesome}
   s.email = %q{mario@mariovisic.com}
@@ -29,14 +29,17 @@ Gem::Specification.new do |s|
      "bin/radiant-go",
      "config/Gemfile",
      "config/config.rb",
-     "db/templates/site.yml",
+     "db/templates/radiant-go.yml",
      "lib/radiant-go.rb",
      "lib/radiant-go/config.rb",
+     "lib/radiant-go/controllers/admin/export.rb",
      "lib/radiant-go/installers/bundler.rb",
      "lib/radiant-go/installers/main.rb",
      "lib/radiant-go/installers/radiant.rb",
+     "lib/radiant-go/models/radiant/config.rb",
      "lib/tasks/radiant_go_tasks.rake",
      "radiant-go.gemspec",
+     "radiant_go_extension.rb",
      "spec/radiant-go/installers/bundler_spec.rb",
      "spec/radiant-go/installers/main_spec.rb",
      "spec/radiant-go/installers/radiant_spec.rb",

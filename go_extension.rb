@@ -8,7 +8,7 @@ class GoExtension < Radiant::Extension
     Radiant::Config.send :include, Go::Models::Radiant::Config
     
     # Controller Includes
-    Admin::ExportController.send :include, Go::Controllers::Radiant::Config
+    Admin::ExportController.send :include, Go::Controllers::Admin::Export
   end
   
 end

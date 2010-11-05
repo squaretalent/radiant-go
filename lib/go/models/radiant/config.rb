@@ -22,7 +22,7 @@ module Go
               
               klasses = models.map { |m| m.constantize }              
               
-              hash = { 'records' => {} }
+              hash = { 'name' => 'name me', 'description' => 'optional', 'records' => {} }
               klasses.each do |klass|
                 hash['records'][klass.name.pluralize] = klass.find(:all).inject({}) { |h, record| h[record.id.to_i] = record.attributes; h }
               end

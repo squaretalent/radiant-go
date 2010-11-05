@@ -20,7 +20,7 @@ module Go
                 models = armodels
               end
               
-              models = models.map { |m| m.constantize }              
+              klasses = models.map { |m| m.constantize }              
               
               hash = {}
               klasses.each do |klass|

@@ -6,7 +6,7 @@ module Go
         def self.included(base)
           base.class_eval do
             def self.export(only=nil,except=nil)
-              ignore = ['schema_migrations','extension_meta','session']
+              ignore = ['schema_migrations','extension_meta','sessions']
               armodels = (ActiveRecord::Base.connection.tables).reject{ |m| ignore.include?(m) }.map{ |m| m.pluralize.classify }
               
               if only && only.present?

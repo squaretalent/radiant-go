@@ -6,7 +6,7 @@ module Go
         def self.included(base)
           base.class_eval do
             def self.export(only=nil,except=nil)
-              armodels = (ActiveRecord::Base.send(:subclasses) - Page.send(:subclasses)).map { |m| m.name }
+              armodels = (ActiveRecord::Base.connection.tables).map { |m| m.name }
               
               if only && only.present?
                 # Returns all models except those specified

@@ -1,4 +1,4 @@
-module RadiantGo
+module Go
   module Models
     module Radiant
       module Config

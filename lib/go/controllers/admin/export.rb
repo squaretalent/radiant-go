@@ -1,4 +1,4 @@
-module RadiantGo
+module Go
   module Controllers
     module Admin
       module Export

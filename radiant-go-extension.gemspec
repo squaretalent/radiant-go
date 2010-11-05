@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
      "bin/radiant-go",
      "config/Gemfile",
      "config/config.rb",
-     "db/templates/radiant-go.yml",
+     "db/templates/go.yml",
      "go_extension.rb",
      "lib/.DS_Store",
      "lib/go/controllers/admin/export.rb",

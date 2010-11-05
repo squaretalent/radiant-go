@@ -19,7 +19,7 @@ records:
       email: admin@example.com
   Pages: 
     1: 
-      class_name: Form
+      class_name: FormPage
       slug: /
       virtual: false
       title: Home Page

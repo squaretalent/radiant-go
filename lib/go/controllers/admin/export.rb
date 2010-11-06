@@ -8,7 +8,7 @@ module Go
             def yaml
               hash = Radiant::Config.export(params[:only], params[:except])
               
-              render :text => hash, :content_type => "text/yaml"
+              send_data hash, :filename => 'export.yml', :type => "text/yaml"
             end
           end
         end

@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mario Visic", "Dirk Kelly"]
-  s.date = %q{2010-11-05}
+  s.date = %q{2010-11-06}
   s.default_executable = %q{radiant-go}
   s.description = %q{a quick an easy way to create radiant projects that are ready to use straight away, automatically perform bootstraps, migrations and updates for radiant and extensions, radiant-go is completely customizable little orphan awesome}
   s.email = %q{mario@mariovisic.com}

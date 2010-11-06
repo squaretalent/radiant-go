@@ -23,14 +23,22 @@ module Go
                 models = armodels
               end
               
-              klasses = models.map { |m| m.constantize }
-              
+              klasses = []
+              models.each do |model|
+                begin
+                  klasses << model.constantize
+                rescue
+                  # Well, that Class doesn't exist now, does it!
+                end
+              end
+              begin
+                
               records = {}
               klasses.each do |klass|
                 begin
                   records[klass.name.pluralize] = klass.find(:all).inject({}) { |h, record| h[record.id.to_i] = record.attributes; h }
                 rescue
-                  # Class doesn't exist for table
+                  # Guess that isn't an active record class afterall
                 end
               end
               

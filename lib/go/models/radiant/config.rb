@@ -7,13 +7,12 @@ module Go
           base.class_eval do
             def self.export(only=nil,except=nil)
               armodels = ['Radiant::Config']
-              ignore = ['schema_migrations','extension_meta','sessions','config']
               
-              armodels += (ActiveRecord::Base.connection.tables).reject{ |m| ignore.include?(m) }
-              armodels = armodels.map{ |m| m.pluralize.classify }
+              artables = (ActiveRecord::Base.connection.tables).map{ |m| m.pluralize.classify } # Compare apples and apples
+              armodels += artables
               
               if only && only.present?
-                # Returns all models except those specified
+                # Returns all models specified
                 models = only.split(',').map { |m| m.pluralize.classify }
                 models = armodels & models
               elsif except && except.present?
@@ -24,15 +23,23 @@ module Go
                 models = armodels
               end
               
-              klasses = models.map { |m| m.constantize }              
+              klasses = models.map { |m| m.constantize }
               
               records = {}
               klasses.each do |klass|
-                records[klass.name.pluralize] = klass.find(:all).inject({}) { |h, record| h[record.id.to_i] = record.attributes; h }
+                begin
+                  records[klass.name.pluralize] = klass.find(:all).inject({}) { |h, record| h[record.id.to_i] = record.attributes; h }
+                rescue
+                  # Class doesn't exist for table
+                end
               end
               
-              description = { 'name' => 'name me', 'description' => 'optional' }
-              description.to_yaml + { 'records' => records}.to_yaml
+              # Ensure order, name, description, records
+              name = { 'name'        => 'name me' }.to_yml
+              desc = { 'description' => 'optional' }.to_yml
+              data = { 'records'     => records }.to_yml
+              
+              name + desc + data
             end
           end
         end

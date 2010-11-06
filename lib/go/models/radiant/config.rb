@@ -42,9 +42,9 @@ module Go
               end
               
               # Ensure order, name, description, records
-              name = { 'name'        => 'name me' }.to_yml
-              desc = { 'description' => 'optional' }.to_yml
-              data = { 'records'     => records }.to_yml
+              name = { 'name'        => 'name me' }.to_yaml
+              desc = { 'description' => 'optional' }.to_yaml
+              data = { 'records'     => records }.to_yaml
               
               name + desc + data
             end

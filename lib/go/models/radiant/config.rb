@@ -10,7 +10,7 @@ module Go
               
               models  = constantize_klasses(klasses)
               
-              records = retrieve_model_records(models)
+              records = retrieve_records(models)
               
               # Ensure order, name, description, records
               name = { 'name'        => 'name me' }.to_yaml

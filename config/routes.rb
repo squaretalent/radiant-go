@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
-
-  map.namespace :admin do |admin|
-    admin.export 'export(.:format)', :controller => 'export', :action => 'yaml'
+  
+  map.with_options(:controller => 'admin/export') do |export|
+    export.export 'admin/export(.:format)', :action => 'yaml'
   end
-
+  
 end

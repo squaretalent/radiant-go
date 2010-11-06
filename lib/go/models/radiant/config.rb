@@ -31,7 +31,6 @@ module Go
                   # Well, that Class doesn't exist now, does it!
                 end
               end
-              begin
                 
               records = {}
               klasses.each do |klass|

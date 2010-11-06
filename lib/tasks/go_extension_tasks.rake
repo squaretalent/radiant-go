@@ -61,7 +61,7 @@ namespace :db do
   task :load => :environment do
     setup = Radiant::Setup.new
     setup.load_database_template(ENV['TEMPLATE'])
-    setup.create_admin_user(ENV['ADMIN_NAME'], ENV['ADMIN_USERNAME'], ENV['ADMIN_PASSWORD'])
+    setup.create_admin_user(ENV['ADMIN_NAME'], ENV['ADMIN_USERNAME'], ENV['ADMIN_PASSWORD']) if ENV['ADMIN_NAME'].present?
   end
   
   desc "Export specific models to yaml"

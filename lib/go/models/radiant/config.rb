@@ -22,7 +22,7 @@ module Go
             
             private
             
-            def find_klasses(only,export)
+            def self.find_klasses(only,export)
               armodels = ['Radiant::Config']
               
               artables = (ActiveRecord::Base.connection.tables).map{ |m| m.pluralize.classify } # Compare apples and apples
@@ -43,7 +43,7 @@ module Go
               models
             end
             
-            def constantize_klasses(models)
+            def self.constantize_klasses(models)
               klasses = []
               
               models.each do |klass|
@@ -57,7 +57,7 @@ module Go
               klasses
             end
             
-            def retrieve_records(klasses)
+            def self.retrieve_records(klasses)
               records = {}
               
               klasses.each do |klass|

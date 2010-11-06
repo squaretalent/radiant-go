@@ -6,7 +6,7 @@ module Go
         def self.included(base)
           base.class_eval do
             def self.export(only=nil,except=nil)
-              klasses = find_klasses(only,export) 
+              klasses = find_klasses(only,except) 
               
               models  = constantize_klasses(klasses)
               

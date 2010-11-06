@@ -22,7 +22,7 @@ module Go
             
             private
             
-            def self.find_klasses(only,export)
+            def self.find_klasses(only,except)
               armodels = ['Radiant::Config']
               
               artables = (ActiveRecord::Base.connection.tables).map{ |m| m.pluralize.classify } # Compare apples and apples

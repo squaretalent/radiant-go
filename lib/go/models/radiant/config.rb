@@ -46,9 +46,9 @@ module Go
             def constantize_klasses(models)
               klasses = []
               
-              models.each do |model|
+              models.each do |klass|
                 begin
-                  klasses << model.constantize
+                  klasses << klass.constantize
                 rescue
                   # Well, that Class doesn't exist now, does it!
                 end

@@ -6,6 +6,23 @@ module Go
         def self.included(base)
           base.class_eval do
             def self.export(only=nil,except=nil)
+              klasses = find_klasses(only,export) 
+              
+              models  = constantize_klasses(klasses)
+              
+              records = retrieve_model_records(models)
+              
+              # Ensure order, name, description, records
+              name = { 'name'        => 'name me' }.to_yaml
+              desc = { 'description' => 'optional' }.to_yaml
+              data = { 'records'     => records }.to_yaml
+              
+              name + desc + data
+            end
+            
+            private
+            
+            def find_klasses(only,export)
               armodels = ['Radiant::Config']
               
               artables = (ActiveRecord::Base.connection.tables).map{ |m| m.pluralize.classify } # Compare apples and apples
@@ -23,7 +40,12 @@ module Go
                 models = armodels
               end
               
+              models
+            end
+            
+            def constantize_klasses(models)
               klasses = []
+              
               models.each do |model|
                 begin
                   klasses << model.constantize
@@ -31,8 +53,13 @@ module Go
                   # Well, that Class doesn't exist now, does it!
                 end
               end
-                
+              
+              klasses
+            end
+            
+            def retrieve_records(klasses)
               records = {}
+              
               klasses.each do |klass|
                 begin
                   records[klass.name.pluralize] = klass.find(:all).inject({}) { |h, record| h[record.id.to_i] = record.attributes; h }
@@ -41,13 +68,9 @@ module Go
                 end
               end
               
-              # Ensure order, name, description, records
-              name = { 'name'        => 'name me' }.to_yaml
-              desc = { 'description' => 'optional' }.to_yaml
-              data = { 'records'     => records }.to_yaml
-              
-              name + desc + data
+              records
             end
+            
           end
         end
         

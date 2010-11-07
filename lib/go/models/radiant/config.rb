@@ -17,7 +17,7 @@ module Go
               desc = { 'description' => 'optional' }.to_yaml
               data = { 'records'     => records }.to_yaml
               
-              name + desc + data
+              (name + desc + data)
             end
             
             private

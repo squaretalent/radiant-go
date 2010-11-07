@@ -9,6 +9,9 @@ class GoExtension < Radiant::Extension
     
     # Controller Includes
     Admin::ExportController.send :include, Go::Controllers::Admin::Export
+    
+    # Library Includes
+    Radiant::Setup.send :include, Go::Lib::Radiant::Setup
   end
   
 end

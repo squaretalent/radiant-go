@@ -23,7 +23,7 @@ module Go
             private
             
             def self.find_klasses(only,except)
-              armodels = ['Radiant::Config']
+              armodels = ['Radiant::Config'] # This is class outside of naming standards that we generally want to include
               
               artables = (ActiveRecord::Base.connection.tables).map{ |m| m.pluralize.classify } # Compare apples and apples
               armodels += artables

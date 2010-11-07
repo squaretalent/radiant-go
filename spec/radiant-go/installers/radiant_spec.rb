@@ -20,49 +20,49 @@ module RadiantGo
         File.directory?('test').should be true
       end
 
-      it 'should not write over existing project files' do
-        
-        # make the README file blank (could be any radiant file instead of README)
-        File.delete 'test/README'
-        readme = File.new('test/README', File::CREAT)
-        readme.close
-        File.size('test/README').should be 0
-        
-        # it shouldn't override
-        @installer.create
-        File.size('test/README').should be 0
-        
-      end
-      
-      it 'should create a non empty database file upon bootstrap' do
-        
-        File.exists?('test/db/development.' + Config.database + '.db').should be false
-        @installer.bootstrap
-        File.exists?('test/db/development.' + Config.database + '.db').should be true
-        File.size('test/db/development.' + Config.database + '.db').should be > 0
-        
-      end
-      
-      it 'shouldnt bootstrap if a database file already exists' do
-        File.exists?('test/db/development.' + Config.database + '.db').should be true
-        File.size('test/db/development.' + Config.database + '.db').should be > 0
-        
-        # we remove our database
-        File.delete('test/db/development.' + Config.database + '.db')
-        
-        # and replace it with a blank file
-        database = File.new('test/db/development.' + Config.database + '.db', File::CREAT)
-        database.close
-        
-        # bootstap shouldn't touch the db now!
-        @installer.bootstrap
-        File.size('test/db/development.' + Config.database + '.db').should be 0
-        
-        # cleanup (need a working DB for later tests)
-        File.delete('test/db/development.' + Config.database + '.db')
-        @installer.bootstrap
-        
-      end
+      # it 'should not write over existing project files' do
+      #   
+      #   # make the README file blank (could be any radiant file instead of README)
+      #   File.delete 'test/README'
+      #   readme = File.new('test/README', File::CREAT)
+      #   readme.close
+      #   File.size('test/README').should be 0
+      #   
+      #   # it shouldn't override
+      #   @installer.create
+      #   File.size('test/README').should be 0
+      #   
+      # end
+      # 
+      # it 'should create a non empty database file upon bootstrap' do
+      #   
+      #   File.exists?('test/db/development.' + Config.database + '.db').should be false
+      #   @installer.bootstrap
+      #   File.exists?('test/db/development.' + Config.database + '.db').should be true
+      #   File.size('test/db/development.' + Config.database + '.db').should be > 0
+      #   
+      # end
+      # 
+      # it 'shouldnt bootstrap if a database file already exists' do
+      #   File.exists?('test/db/development.' + Config.database + '.db').should be true
+      #   File.size('test/db/development.' + Config.database + '.db').should be > 0
+      #   
+      #   # we remove our database
+      #   File.delete('test/db/development.' + Config.database + '.db')
+      #   
+      #   # and replace it with a blank file
+      #   database = File.new('test/db/development.' + Config.database + '.db', File::CREAT)
+      #   database.close
+      #   
+      #   # bootstap shouldn't touch the db now!
+      #   @installer.bootstrap
+      #   File.size('test/db/development.' + Config.database + '.db').should be 0
+      #   
+      #   # cleanup (need a working DB for later tests)
+      #   File.delete('test/db/development.' + Config.database + '.db')
+      #   @installer.bootstrap
+      #   
+      # end
       
       it 'should alter the configuration in the environment file' do
         

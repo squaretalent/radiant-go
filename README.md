@@ -10,6 +10,8 @@ radiant-go is a script that creates radiant projects and automates setup tasks i
 * altering the config to require extensions
 * updating extensions
 * migrating extensions
+* exporting the whole database
+* importing the database
 
 ## using the generator
 
@@ -25,11 +27,12 @@ to create a new project with the default settings simply run:
     # modify the config and gemfiles
     radiant-go projectfolder
 
-**slightly longer explaination:**
+**slightly longer explanation:**
 
 to customise the setup of radiant go, simply run the config generator:
   
     radiant-go --create-config projectname
+    
 this generates a folder with a Gemfile that you can alter and a config file located at config/radiant-go.rb. modify these files to your liking and then run the radiant-go generator on that project folder
     
     radiant-go projectname
@@ -44,7 +47,7 @@ there is none unfortunately. radiant-go runs external generators and POSIX comma
 
 ## vendored extensions
 
-currently radiant-go only supports extensions as gems. this is on purpose, all radiant extensions should be moved to gems, it's a much nicer and easier way to deal with them. See this screencast for more information on gem extensions http://radiantcms.org/blog/archives/2010/07/01/radiantcasts-episode-18-extensions-as-gems/
+currently radiant-go only supports extensions as gems. this is on purpose, all radiant extensions should be moved to gems, it's a much nicer and easier way to deal with them. See this (screencast)[http://radiantcms.org/blog/archives/2010/07/01/radiantcasts-episode-18-extensions-as-gems/] for more information on gem extensions.
 
 ## license
 

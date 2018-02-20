@@ -1,9 +1,0 @@
-usage: radiant-go [options] /path/to/radiant/app 
-
-options:
-  -c, --create-config   creates configuration only, run this first if you want to edit the radiant-go config
-
-info:
-  -h, --help            shows this help
-  -v, --version         shows the radiant-go version number
-
